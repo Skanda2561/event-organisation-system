@@ -1,0 +1,34 @@
+/* navbar section*/
+.navbar {
+  background-color:#0d7377;
+}
+.nav-item{
+border-radius: 20px;
+margin-right:20px;
+text-align: center;
+}
+.nav-item:hover{
+  background-color:#32e0c4;
+}
+
+/*footer section*/
+#footer{
+  background-color: #212121 ;
+  text-align: center;
+}
+.social-icon {
+  margin: 30px 10px;
+  color: #32e0c4;
+}
+.footbtn{
+  margin: 20px 10px;
+  align-self: auto;
+}
+.footbtn:hover{
+  background-color: #32e0c4;
+}
+.know-more:link, .know-more:visited {
+  color:#eee;
+  text-decoration: none;
+  cursor: auto;
+}
