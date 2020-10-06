@@ -1,0 +1,52 @@
+/* events section */
+#events{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+section{
+  padding:50px, 50px;
+  padding-bottom: 4rem;
+}
+.event-column{
+  padding: 1%;
+  margin-top: 20px;
+  display: inline-flex;
+  justify-content: center;
+}
+.card{
+background: rgba(50, 224, 196, 0.07);
+width: auto;
+display: inline-block;
+border-radius: 10px;
+text-align: center;
+z-index: 9999;
+border-radius: 15px;
+
+}
+.card:hover{
+  background: linear-gradient(145deg, #f5fff6, #cee6cf);
+  box-shadow:  5px 5px 17px #e3fce4,
+               -5px -5px 17px #e7ffe8;
+}
+.event-info{
+  display: block;
+}
+.event-image{
+margin-bottom: 35px;
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+}
+.one-third{
+  width: 33%;
+  float: left;
+}
+.reg-btn{
+padding: auto;
+padding-top: 11%;
+}
+/* use these colors only
+rgba(238, 238, 238, 1) = #eeeeee
+rgba(50, 224, 196, 1) = #32e0c4
+rgba(13, 115, 119, 1) =  #0d7377
+rgba(33, 33, 33, 1) = #212121
+ */
