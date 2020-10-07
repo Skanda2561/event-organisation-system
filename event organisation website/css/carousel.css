@@ -1,0 +1,22 @@
+html, body {
+height:100%;
+margin:0;
+padding:0;
+}
+.carousel-caption {
+z-index: 10;
+}
+.carousel-item img{
+  width: 100%;
+  height:auto;
+}
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 0 8px;
+}
+.carousel-controller{
+  padding-top: auto;
+  padding-bottom: auto;
+}
