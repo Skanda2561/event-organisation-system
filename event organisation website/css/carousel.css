@@ -8,6 +8,7 @@ z-index: 10;
 }
 .carousel-item img{
   width: 100%;
+  height:auto;
 }
 .carousel-indicators li {
   width: 10px;
