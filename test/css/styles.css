@@ -14,7 +14,7 @@ text-align: center;
 /*footer section*/
 #footer{
   background-color: #212121 ;
-  text-align: center;
+  text-align:center;
 }
 .social-icon {
   margin: 30px 10px;
@@ -32,3 +32,10 @@ text-align: center;
   text-decoration: none;
   cursor: auto;
 }
+
+/*
+rgba(238, 238, 238, 1) = #eeeeee
+rgba(50, 224, 196, 1) = #32e0c4
+rgba(13, 115, 119, 1) =  #0d7377
+rgba(33, 33, 33, 1) = #212121
+ */
