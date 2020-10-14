@@ -1,6 +1,12 @@
+.body{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 /* navbar section*/
 .navbar {
   background-color:#0d7377;
+  opacity: 0.85
 }
 .nav-item{
 border-radius: 20px;
@@ -15,6 +21,8 @@ text-align: center;
 #footer{
   background-color: #212121 ;
   text-align:center;
+  width: 100%;
+  padding-bottom: 0;
 }
 .social-icon {
   margin: 30px 10px;
