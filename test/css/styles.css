@@ -11,6 +11,7 @@
 .nav-item{
 border-radius: 20px;
 margin-right:20px;
+max-width:150px;
 text-align: center;
 }
 .nav-item:hover{
