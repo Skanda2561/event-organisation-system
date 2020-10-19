@@ -7,12 +7,12 @@
 }
 .login{
   position: relative;
-  min-height: 100vh;
+  min-height: 88vh;
   background: rgba(50, 224, 196, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 4px 20px;
 }
 .login .container{
   position: absolute;
@@ -45,7 +45,7 @@
   width: 100%;
   object-fit: cover;
 }
-.login .container .user .formbox{
+.login .container .user .formbox {
   position: relative;
   display: flex;
   justify-content: center;
@@ -56,32 +56,41 @@
   transition: 0.6s;
 }
 
-.login .container .user .formbox form h2{
+.login .container .user .formbox form h2, .signup .user .formbox form h2{
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
   width: 100%;
   margin-bottom: 15px;
+  transition: 0.6s;
 }
-.login .container .user .formbox form input {
+.login .container .user .formbox form input ,.signup .user .formbox form input{
   width: 100%;
   padding: 10px;
   border: none;
+  border-radius: 7px;
   outline: none;
   background: #f5f5f5;
   color: #333;
   margin: 8px 0;
   letter-spacing: 1px;
   font-weight: 300;
+  max-width: 400px;
+  min-width: 250px;
+  transition: 0.6s;
 }
-.login .container .user .formbox form input[type="submit"]{
+.login .container .user .formbox form input[type="submit"], .signup .user .formbox form input[type="submit"]{
   max-width: 100px;
   transition: 0.5s;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: 0.6s;
 
+}
+.login .container .user .formbox form input[type="submit"]:hover, .signup .user .formbox form input[type="submit"]:hover{
+  background: #0ff;
 }
 .login .container .user .formbox form input a{
   text-decoration: none;
@@ -92,12 +101,7 @@
     font-weight: 600;
 }
 
-.login .container .hosts{
- z-index:+10;
-}
-.login .container .hosts{
- z-index:+5;
-}
+
 
 
 .login .container .hosts{
@@ -134,6 +138,24 @@
 .login .container.active .studs .imgbox{
   left:-100%;
 }
+.signup .user{
+  background: rgba(50, 224, 196, 0.1);
+  padding: 3% 10%;
+  box-shadow:0 15px 50px rgba(0, 0, 0, 0.03);
+}
+.signup .user formb{
+  min-height: 88vh;
+}
+.signup .user .user-prompt{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 15px;
+}
+.signup .user .formbox form, .signup .user .user-prompt .signin-prompt{
+  display: none;
+}
+
 @media (max-width:900px){
   .login .container{
     max-width:450px;

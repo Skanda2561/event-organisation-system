@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>website-name-here</title>
+  <title>Event-plazA</title>
   <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
@@ -21,13 +21,19 @@
 
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!--FAVICON-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon//favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
 </head>
 <body>
   <!-- Navbar -->
 
   <nav class="navbar navbar-expand-lg navbar-light ">
 
-    <a class="navbar-brand" href="../index.html">site-name</a>
+    <a class="navbar-brand" href="../index.html"><img src="../images/site-logo.png" alt="site-logo"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
         <span class="navbar-toggler-icon"></span>
@@ -81,6 +87,30 @@
   </div>
 </section>
 
+<!--SIGNUP SECTION-->
+<section class="signup" >
+    <div class="user">
+      <div class="formbox">
+        <form>
+          <h2>Sign Up</h2>
+          <label for="uname">Username</label><br>
+          <input type="text" name="uname" id="uname" value="" placeholder="Username"><br>
+          <label for="mail">E-mail</label><br>
+          <input type="email" name="mail" id="mail" value="" placeholder="User e-mail"><br>
+          <label for="crpword">Create Password</label><br>
+          <input type="password" name="crpword" id="crpword" value="" placeholder="Create Password"><br>
+          <label for="copword">Confirm Password</label><br>
+          <input type="password" name="copword" id="copword" value="" placeholder="Confirm Password"><br>
+          <input type="submit" name="" value="Sign Up"><br>
+        </form>
+      </div>
+      <div class="user-prompt">
+        <p class="signup-prompt">Don't have an account ?   <a href="#" onclick="userSignup();" > Sign Up </a> </p><br>
+        <p class="signin-prompt">Already have an account ?   <a href="#" onclick="userSignin();" > Sign in </a> </p><br>
+      </div>
+    </div>
+</section>
+
   <!-- Footer -->
 
   <footer  id="footer">
@@ -96,12 +126,6 @@
     </div>
   </footer>
   <!--javascript-->
-  <script type="text/javascript">
-  function toggleForm() {
-    var container=document.querySelector('.login .container');
-    container.classList.toggle('active')
-  }
-
-  </script>
+  <script src="../javascript/signin.js"></script>
 </body>
 </html>
