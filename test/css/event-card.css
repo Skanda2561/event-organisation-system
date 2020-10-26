@@ -20,19 +20,24 @@ body .dark-theme{
 section{
   padding:50px, 50px;
   padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items:
 }
 .event-column{
   padding: 1%;
   margin-top: 20px;
 }
+
 .card{
 background-color: var(--shade1) !important;
 width: auto;
 display: inline-block;
 z-index: 99;
 border-radius: 15px !important;
-min-width: 270px !important;
-max-width: 400px;
+min-width: 280px !important;
+max-width: 450px;
+
 }
 .card .card-body .event-name{
   text-align: center;
