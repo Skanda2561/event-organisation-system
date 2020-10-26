@@ -1,3 +1,17 @@
+body{
+  --shade1:#F9F6F7;
+  --shade2:#E3F6F5;
+  --shade3:#BAE8E8;
+  --shade4:#272343 ;
+  --text:#000;
+}
+body .dark-theme{
+  --shade1:#343A40;
+  --shade2:#282423;
+  --shade3:#211E1C;
+  --shade4:#191715;
+  --text:#f9f6f7;
+}
 /* events section */
 #events{
   margin-left: 10%;
@@ -6,25 +20,30 @@
 section{
   padding:50px, 50px;
   padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items:
 }
 .event-column{
   padding: 1%;
   margin-top: 20px;
-  display: inline-flex;
-  justify-content: center;
 }
+
 .card{
-background: rgba(50, 224, 196, 0.04);
+background-color: var(--shade1) !important;
 width: auto;
 display: inline-block;
-border-radius: 10px;
-text-align: center;
-z-index: 9999;
-border-radius: 15px;
+z-index: 99;
+border-radius: 15px !important;
+min-width: 280px !important;
+max-width: 450px;
 
 }
+.card .card-body .event-name{
+  text-align: center;
+}
 .card:hover{
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0),rgba(255, 0, 0, 0.05) );
+  background: linear-gradient(45deg,var(--shade1),var(--shade2) );
   box-shadow:10px 10px 30px rgba(0, 0, 0, 0.07);
 
 }
@@ -33,20 +52,38 @@ border-radius: 15px;
 margin-bottom: 35px;
 border-top-left-radius:10px;
 border-top-right-radius:10px;
+background: rgba(#5df7ee, 1);
 }
 .one-third{
   width: 33%;
-  height: 100%;
   float: left;
   padding: 1%;
 }
 .reg-btn{
-padding: auto;
-padding-top: 11%;
+padding-top: 3%;
 }
-/* use these colors only
-rgba(238, 238, 238, 1) = #eeeeee
-rgba(50, 224, 196, 1) = #32e0c4
-rgba(13, 115, 119, 1) =  #0d7377
-rgba(33, 33, 33, 1) = #212121
- */
+.reg-btn .btn{
+  color: var(--text) !important;
+}
+.reg-btn .btn:hover{
+  background:var(--shade3) !important;
+}
+
+/*mediaquery for dark mode*/
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --shade1:#343A40;
+    --shade2:#282423;
+    --shade3:#211E1C;
+    --shade4:#191715;
+    --text:#f9f6f7;
+  }
+  body.light-theme {
+    --shade1:#F9F6F7;
+    --shade2:#E3F6F5;
+    --shade3:#BAE8E8;
+    --shade4:#272343 ;
+    --text:#000;
+  }
+}

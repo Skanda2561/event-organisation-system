@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html  >
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>website-name-here</title>
+  <title>Event-plazA</title>
   <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
@@ -18,18 +18,24 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"> </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"> </script>
+
+  <!--FAVICON-->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon//favicon-16x16.png">
+
 </head>
-<body>
+<body >
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light ">
+  <nav id="top" class="navbar navbar-expand-lg navbar-light ">
 
-    <a class="navbar-brand" href="">site-name</a>
+    <a class="navbar-brand" href=""> <img src="images/site-logo.png" alt="site-logo"> </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Toggler" style="border-style:none;">
+        <span class="navbar-toggler-icon fas fa-ellipsis-v"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse" id="Toggler">
       <p></p>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -46,6 +52,15 @@
     </div>
 
   </nav>
+  <div class="helper">
+    <div class="icon backtotop" title="Back To Top">
+      <a href="#top"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
+    </div><br>
+    <div class="icon theme "  title="Change Theme">
+      <button class="btn-toggle"> <i class="fas fa-adjust fa-2x"> </i></button>
+    </div>
+
+  </div>
 
   <!-- Main events cards-->
   <section class="items" id="events">
@@ -54,7 +69,6 @@
 
       <div class="event-column col-lg-4 col-md-6 col-xs-12">
         <div class="card">
-
           <div class="card-body">
             <div class="event-image">
               <img src="" alt="event-image" >
@@ -68,82 +82,23 @@
             <hr>
             <div class="event-info">
               <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
+                <p>Date : </p>
+                <p>06/10/20</p>
               </div>
               <div class="one-third">
-                <p>venue</p>
+                <p>Venue : </p>
                 <p>indoor stadium</p>
               </div>
               <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
+                <button class="btn btn-small btn-outline-dark " type="button"> Register </button><br>
+                <button class="btn btn-small btn-outline-dark " type="button">See more</button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
 
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
 
@@ -151,7 +106,6 @@
   <br>
 
   <!-- Footer -->
-  <section>
     <footer  id="footer">
     <div class="container-fluid abtus">
       <i class="social-icon fab fa-facebook-f"></i>
@@ -164,8 +118,8 @@
       </button>
     </div>
   </footer>
-  </section>
 
+  <script src="javascript/theme.js"></script>
 
 </body>
 </html>
