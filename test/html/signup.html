@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Event-plazA</title>
+  <!-- Font Awesome-->
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"> </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"> </script>
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!--FAVICON-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon//favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body >
+  <!-- Navbar -->
+
+  <nav id="top" class="navbar navbar-expand-lg navbar-light ">
+
+    <a class="navbar-brand" href="../index.html"><img src="../images/site-logo.png" alt="site-logo"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <p></p>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="events.html">All Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">About Us</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+  <div class="helper">
+    <div class="icon backtotop" title="Back To Top">
+      <a href="#top"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
+    </div>
+    <div class="icon theme " title="Change Theme">
+      <button class="btn-toggle"> <i class="fas fa-adjust fa-2x"> </i></button>
+    </div>
+
+  </div>
+
+  <!--SIGNUP SECTION-->
+  <section class="signup" >
+      <div class="container">
+          <div class="imgbox"><img src="" alt="Lorem ipsum dolor sit amet,"></div>
+          <div class="formbox">
+            <form method="post">
+              <h2>Sign Up</h2>
+              <label for="uname">Username</label><br>
+              <input type="text"required name="uname" id="uname"  placeholder="Username" ><br>
+              <label for="usertype">Type of user</label><br>
+              <select name="usertype" id="usertype">
+                <option value="student">Student</option>
+                <option value="host">Host</option>
+              </select>
+              <br>
+              <label for="mail">E-mail</label><br>
+              <input type="email" required name="mail" id="mail"  placeholder="User e-mail" ><br>
+              <label for="crpword">Create Password</label> <br>
+              <input type="password"required name="crpword" id="crpword"  placeholder="Create Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
+              <label for="copword">Confirm Password</label><br>
+              <input type="password" required name="copword" id="copword"  placeholder="Confirm Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
+              <input type="submit" name="" value="Sign Up" onclick="registerUser()"><br>
+            </form>
+        </div>
+      </div>
+  </section>
+  <div class="user-prompt">
+    <p class="signin-prompt">Already have an account ?   <a href="signin.html"  > Sign in </a> </p><br>
+  </div>
+
+    <!-- Footer -->
+
+  <footer  id="footer">
+      <div class="container-fluid abtus">
+        <i class="social-icon fab fa-facebook-f"></i>
+        <i class="social-icon fab fa-twitter"></i>
+        <i class="social-icon fab fa-instagram"></i>
+        <i class="social-icon fas fa-envelope"></i>
+        <br>
+        <button type="button" class="btn btn-outline-secondary  footbtn">
+          <a class="know-more" href="aboutus.html">Know more <i class="fa fa-chevron-right"></i></a>
+        </button>
+      </div>
+    </footer>
+    <!--javascrip-->
+    <script src="../javascript/signin.js"></script>
+    <script src="../javascript/theme.js"></script>
+</body>
+</html>

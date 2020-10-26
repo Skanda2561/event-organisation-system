@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
 
 <head>
   <meta charset="utf-8">
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/event-card.css">
   <link rel="stylesheet" href="../css/carousel.css">
+  <link rel="stylesheet" href="../css/navandform.css">
 
 
   <!-- Bootstrap Scripts -->
@@ -27,11 +28,11 @@
   <link rel="manifest" href="/site.webmanifest">
 
 </head>
-<body>
+<body >
 
   <!-- Navbar -->
 
-  <nav class="navbar navbar-expand-lg navbar-light ">
+  <nav id="top" class="navbar navbar-expand-lg navbar-light ">
 
     <a class="navbar-brand" href="../index.html"><img src="../images/site-logo.png" alt="site-logo"></a>
 
@@ -52,6 +53,16 @@
 
     </div>
   </nav>
+
+  <div class="helper">
+    <div class="icon backtotop" title="Back To Top">
+      <a href="#top"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
+    </div>
+    <div class="icon theme " title="Change Theme">
+      <button class="btn-toggle"> <i class="fas fa-adjust fa-2x"> </i></button>
+    </div>
+
+  </div>
 
   <!--carousel-->
   <main>
@@ -107,323 +118,402 @@
 
 
   <!-- Event Cards-->
-  <section class="items" id="events">
+  <div class="container">
 
-    <div class="row">
+    <!-- Nav tabs -->
+    <ul class="nav nav-pills justify-content-end" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#upcoming">Upcoming</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#past">Previous</a>
+      </li>
+    </ul>
 
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="upcoming" class="container tab-pane active"><br>
+        <h4>Upcoming events</h4>
+        <section class="items" id="events">
+          <div class="row">
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button"> Register </button><br>
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button"> Register </button><br>
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
+            </div>
+
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button"> Register </button><br>
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button"> Register </button><br>
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button"> Register </button><br>
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </div>
+        </section>
+
       </div>
+      <div id="past" class="container tab-pane fade"><br>
+        <h4>Previous events</h4>
+        <section class="items" id="events">
+          <div class="row">
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
+            </div>
+
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="event-column col-lg-4 col-md-6 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="event-image">
+                    <img src="" alt="event-image" >
+                  </div>
+                  <div class="event-name">
+                    <h2 >event-name</h2>
+                  </div>
+                  <div class="event-description">
+                    <p>very brief description only ten words</p>
+                  </div>
+                  <hr>
+                  <div class="event-info">
+                    <div class="one-third">
+                      <p>Date : </p>
+                      <p>06/10/20</p>
+                    </div>
+                    <div class="one-third">
+                      <p>Venue : </p>
+                      <p>indoor stadium</p>
+                    </div>
+                    <div class="one-third reg-btn">
+                      <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-        </div>
+        </section>
       </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="event-column col-lg-4 col-md-6 col-xs-12">
-        <div class="card">
-
-          <div class="card-body">
-            <div class="event-image">
-              <img src="" alt="event-image" >
-            </div>
-            <div class="event-name">
-              <h2 >event-name</h2>
-            </div>
-            <div class="event-description">
-              <p>very brief description only ten words</p>
-            </div>
-            <hr>
-            <div class="event-info">
-              <div class="one-third">
-                <p>date</p>
-                <p>06/10/2020</p>
-              </div>
-              <div class="one-third">
-                <p>venue</p>
-                <p>indoor stadium</p>
-              </div>
-              <div class="one-third reg-btn">
-                <button class="btn btn-small btn-inline btn-outline-dark " type="button">register</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-
-  </section>
+  </div>
 
 
   <!-- Footer -->
@@ -440,6 +530,7 @@
       </button>
     </div>
   </footer>
+  <script src="../javascript/theme.js"></script>
 
 </body>
 </html>

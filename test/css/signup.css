@@ -12,49 +12,41 @@ body .dark-theme{
   --shade4:#191715;
   --text:#f9f6f7;
 }
-.login{
+.signup{
   position: relative;
-  min-height: 88vh;
-  background: var(--shade1);
+  min-height: 100vh;
+  background: var(--shade2);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 20px;
+  padding: 10px 20px;
 }
-.login .container{
+
+.signup .container{
   position: absolute;
-  height: 500px;
-  border-radius: 12px;
   width: 800px;
-  background: var(--shade2);
+  height: 600px;
+  padding: 0;
+  margin: 0;
+  background: var(--shade3);
   box-shadow:0 15px 50px rgba(0, 0, 0, 0.3);
-  overflow:hidden;
+  overflow: hidden;
+  border-radius: 12px;
 }
-.login .container .studs, .hosts{
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-.login .container .user .imgbox{
+.signup .container  .imgbox{
   position: relative;
   height: 100%;
   width: 50%;
   background: #0ff;
   transition: 0.5s;
+  float: right;
 }
-.login .container .user .imgbox img{
-  position: absolute;
-  top: 0;
-  left: 0;
+.signup .container  .imgbox img{
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 12px;
 }
-.login .container .user .formbox {
+.signup .container  .formbox {
   position: relative;
   display: flex;
   justify-content: center;
@@ -62,10 +54,11 @@ body .dark-theme{
   height: 100%;
   width: 50%;
   padding: 30px;
+  right: 0;
   transition: 0.6s;
 }
 
-.login .container .user .formbox form h2{
+.signup .container  .formbox form h2{
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -73,21 +66,22 @@ body .dark-theme{
   margin-bottom: 15px;
   transition: 0.6s;
 }
-.login .container .user .formbox form input,select {
+.signup .container  .formbox form input,select {
   width: 100%;
   padding: 10px;
   border: none;
   border-radius: 7px;
   outline: none;
   background: var(--shade1);
+  color: #333;
   margin: 8px 0;
   letter-spacing: 1px;
-  font-weight: 200;
+  font-weight: 300;
   max-width: 400px;
   min-width: 250px;
   transition: 0.6s;
 }
-.login .container .user .formbox form input[type="submit"]{
+.signup .container .formbox form input[type="submit"]{
   min-width: 100px;
   transition: 0.5s;
   font-size: 14px;
@@ -97,56 +91,20 @@ body .dark-theme{
   transition: 0.6s;
 
 }
-.login .container .user .formbox form input[type="submit"]:hover{
-  background: var(--shade4);
+.signup .container .formbox form input[type="submit"]:hover{
+  background:var(--shade4) ;
+  color: #FFF;
   opacity: 0.75;
 }
-.login .container .user .formbox form input a{
+.signup .container .formbox form input a{
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
 }
-.login .container .user .formbox form input a:hover{
+.signup .container .formbox form input a:hover{
     text-decoration: none;
     font-weight: 600;
 }
 
-
-
-
-.login .container .hosts{
-  pointer-events:none;
-}
-.login .container.active .hosts{
-  pointer-events:initial;
-}
-
-.login .container .hosts .formbox{
-  left:100%;
-}
-.login .container.active .hosts .formbox{
-  left:0;
-}
-.login .container .hosts .imgbox{
-  left:-100%;
-  background:#0ff;
-}
-.login .container.active .hosts .imgbox{
-  left:0;
-}
-
-
-.login .container .studs .formbox{
-  left:0;
-}
-.login .container.active .studs .formbox{
-  left:100%;
-}
-.login .container .studs .imgbox{
-  left:0;
-}
-.login .container.active .studs .imgbox{
-  left:-100%;
-}
 
 .user-prompt{
 display: flex;
@@ -156,17 +114,15 @@ background: var(--shade2);
 padding: 3% auto;
 box-shadow:0 15px 50px rgba(0, 0, 0, 0.03);
 }
-.signup-prompt{
-  padding-top: 15px;
-}
+/*media query to make the form width 100%on small screen*/
 @media (max-width:900px){
-  .login .container{
+  .signup .container{
     max-width:450px;
   }
-  .login .container .imgbox{
+  .signup .container .imgbox{
     display:none;
   }
-  .login .container .user .formbox{
+  .signup .container .formbox{
     width:100%;
   }
 }
