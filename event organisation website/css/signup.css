@@ -5,7 +5,7 @@ body{
   --shade4:#272343 ;
   --text:#000;
 }
-body .dark-theme{
+.dark-theme{
   --shade1:#343A40;
   --shade2:#282423;
   --shade3:#211E1C;
