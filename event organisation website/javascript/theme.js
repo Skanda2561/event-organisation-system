@@ -2,7 +2,6 @@
 const btn = document.querySelector(".btn-toggle");
 // Check for dark mode preference at the OS level
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
 // Get the user's theme preference from local storage, if it's available
 const currentTheme = localStorage.getItem("theme");
 // If the user's preference in localStorage is dark...

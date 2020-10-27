@@ -28,6 +28,8 @@ body{
   margin: 0;
   border: 0;
   background-color: var(--shade1) !important;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 /* navbar section*/
 .navbar {
@@ -74,6 +76,11 @@ color:var(--text) !important;
 .btn-toggle  {
   border-style: none;
   background: rgba(0, 0, 0, 0) !important;
+}
+
+/*main event cards*/
+.main-event-wrapper {
+  margin: 1.5rem ,2.5rem !important;
 }
 
 /*footer section*/
