@@ -128,7 +128,10 @@ body{
 }
 .login .container .hosts .imgbox{
   left:-100%;
-  background:#0ff;
+  background:#dbd5d7;
+  background-image:url("../images/hostbg.png");
+  background-repeat:no-repeat;
+  background-position: 22px bottom ;
 }
 .login .container.active .hosts .imgbox{
   left:0;
@@ -143,6 +146,9 @@ body{
 }
 .login .container .studs .imgbox{
   left:0;
+  background:#dbd5d7;
+  background-image:url("../images/studsbg.png");
+  background-repeat:no-repeat;
 }
 .login .container.active .studs .imgbox{
   left:-100%;
