@@ -9,10 +9,15 @@
   <!-- Font Awesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/carousel.css">
+  <link rel="stylesheet" href="../css/aboutus.css">
+
 
   <!-- Bootstrap Scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
@@ -112,6 +117,17 @@
   		</div><!-- /.carousel -->
   	</div><!-- /.container -->
 
+    <div class="newsletter container-fluid" >
+      <form class=""  method="post">
+        <h2 style="color:#000;">Events at your fingertips!!!</h2><br>
+        <p style="color:#000;">Sign up to our monthly newsletter and never miss out from an event. Also get the event passes and goodies at a discounted rate !!</p>
+        <br>
+        <label for="mail" style="color:#000;">E-mail</label><br>
+        <input required type="email" name="mail" id="mail"  placeholder="User e-mail" ><br>
+        <input type="submit" name="" value="Sign up" onclick="thanks();" style="color:#000;"><br>
+      </form>
+    </div>
+
 <!-- Footer -->
 
 <section>
@@ -127,6 +143,26 @@
 </section>
 
 <script src="../javascript/theme.js"></script>
+<script type="text/javascript">
+  function thanks(){
+    var mail = document.getElementById("mail").value
+    if (mail!="") {
+      alert("Thank you for signing up for the newsletter.")
+    } else {
+      alert("Please enter your e-mail.")
+    }
+  }
+</script>
 
 </body>
 </html>
+
+
+<!--
+<i class="fas fa-key"></i>
+<i class="fas fa-id-badge"></i>
+<i class="fas fa-user-graduate"></i>
+<i class="fas fa-chalkboard-teacher"></i>
+<i class="fas fa-unlock-alt"></i>
+<i class="fas fa-at"></i>
+-->

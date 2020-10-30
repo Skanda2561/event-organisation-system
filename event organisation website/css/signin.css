@@ -73,7 +73,7 @@ body{
   margin-bottom: 15px;
   transition: 0.6s;
 }
-.login .container .user .formbox form input,select {
+.login .container .user .formbox form input {
   width: 100%;
   padding: 10px;
   border: none;
@@ -99,6 +99,7 @@ body{
 }
 .login .container .user .formbox form input[type="submit"]:hover{
   background: var(--shade4);
+  color: #fff;
   opacity: 0.75;
 }
 .login .container .user .formbox form input a{

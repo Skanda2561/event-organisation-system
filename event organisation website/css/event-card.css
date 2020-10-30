@@ -26,7 +26,7 @@ section{
 }
 
 #card-deck button {
-  background-color: var(--shade3);
+  background-color: var(--shade2);
   color: var(--text);
   border-radius: 20px;
   text-align: center;

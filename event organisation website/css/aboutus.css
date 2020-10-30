@@ -1,0 +1,24 @@
+.newsletter{
+  min-height: 100vh;
+  width: 100%;
+  height: auto;
+  background-image: url("../images/likes.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.newsletter form{
+  position: relative;
+  max-width: 400px;
+  padding-left:6%;
+  padding-top: 10%;
+}
+.newsletter form input{
+  width:250px;
+  line-height: 2;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  margin: 8px 0;
+}

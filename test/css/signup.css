@@ -73,7 +73,7 @@ body{
   border-radius: 7px;
   outline: none;
   background: var(--shade1);
-  color: #333;
+  color: #333 !important;
   margin: 8px 0;
   letter-spacing: 1px;
   font-weight: 300;
@@ -81,6 +81,7 @@ body{
   min-width: 250px;
   transition: 0.6s;
 }
+
 .signup .container .formbox form input[type="submit"]{
   min-width: 100px;
   transition: 0.5s;
@@ -93,7 +94,7 @@ body{
 }
 .signup .container .formbox form input[type="submit"]:hover{
   background:var(--shade4) ;
-  color: #FFF;
+  color: #FFF !important;
   opacity: 0.75;
 }
 .signup .container .formbox form input a{
