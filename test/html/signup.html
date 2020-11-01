@@ -71,12 +71,13 @@
       <div class="container">
           <div class="imgbox"><img src="../images/signup.jpg" alt="img"></div>
           <div class="formbox">
-            <form method="post">
+            <form method="post"id = "form_id">
               <h2>Sign Up</h2>
               <label for="uname">Username</label><br>
               <input type="text"required name="uname" id="uname"  placeholder="Username" ><br>
               <label for="usertype">Type of user</label><br>
               <select name="usertype" id="usertype" style="color:#5c5c5c;">
+                 <option  style="color:#5c5c5c;" >--Select UserType--</option>
                 <option value="student" style="color:#5c5c5c;">Student</option>
                 <option value="host" style="color:#5c5c5c;">Host</option>
               </select>
@@ -91,7 +92,7 @@
               <input type="password" required name="copword" id="copword"  placeholder="Confirm Password"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
-              <input type="submit" name="" value="Sign Up" onclick="registerUser()"><br>
+              <input id="submit" type="submit" class="submit" value="Submit" ><br>
             </form>
         </div>
       </div>
@@ -117,5 +118,22 @@
     <!--javascrip-->
     <script src="../javascript/signin.js"></script>
     <script src="../javascript/theme.js"></script>
+    <script> $(document).ready(function(){
+    $("#usertype").change(function(){
+    var url =  $(this).children(":selected").text(); //get the selected option value
+    switch (url)
+   {
+    case "Student":
+    $("#form_id").attr('action','Student.html');
+    //changing action attribute of form to student.html
+    break;
+    case "Host":
+    $("#form_id").attr('action','host.html');//changing action attribute of form to host.html
+    break;
+    default:
+        $("#form_id").attr('action', '#');
+    }
+    });
+  });</script>
 </body>
 </html>
