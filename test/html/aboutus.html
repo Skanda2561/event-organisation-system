@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html >
 
@@ -27,9 +28,60 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon//favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon//favicon-16x16.png">
+<style>
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
 </head>
 <body >
+
+<div class="header">
+  <h1>About Us</h1>
+  <p>Our event website works as the online representative for your event. </p>
+<p> Not only is it the official point of contact for you and your attendees, it is also a reflection of what your event is all about and the ideologies guiding it.</p>
+</div>
 
   <!-- Navbar -->
   <section id="top">
@@ -116,6 +168,31 @@
   			</a>
   		</div><!-- /.carousel -->
   	</div><!-- /.container -->
+
+<div class="row">
+<div class="column side">
+    <h2></h2>
+  </div>
+  
+  <div class="column middle">
+    <h2><U>OUR MISSION</U></h2>
+<ul>
+  <li>Increase Students participation..</li>
+  <li>Introducing new and challenging ideas.</li>
+  <li>Education, training and volunteering programmes.</li>
+<li> Specific to areas of the event..</li>
+<li>Timed within the event schedule.</li>
+</ul> 
+    <p>Our event website is the main source to provide attendees with event info, sessions, speakers, agenda, and more.  </p>
+    <p>Attendees learn everything they need to know about the meeting or event, and in turn, you gather everything needed to carry it out with digital ease. </p>
+    <p>We also organise events on IEEE,NSS,NCC,HIKING(MOUNTAIN) and many more events....</p>
+<p>No keeping track of 1,000 email responses or manually tallying up information. The time and money saved on data entry administrative tasks can be used to better the event, contact more sponsors, prepare more activities, or reply faster to participants.</p>
+<p>Attendees need to receive a lot of data that will be important for making the most of the event. The registration specifics, fees, schedule, venue map, dates, types of activities, biographies of speakers, etc. will all matter. </p>
+<p>Having to send this information individually or print it out could potentially result in chaos.so to deal with this type of situation we hae made a well organised website <b><i>"EVENTS ORGAINSATION SYSTEM"...</b></i></p>
+  </div>
+  
+
+</div>
 
     <div class="newsletter container-fluid" >
       <form class=""  method="post">
