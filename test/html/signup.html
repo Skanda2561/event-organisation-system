@@ -12,7 +12,12 @@
 
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
+ <!--javascrip-->
+ <script src="../javascript/signin.js"></script>
+ <script src="../javascript/SignUp.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+ <script src="../javascript/theme.js"></script>
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styles.css">
@@ -71,28 +76,28 @@
       <div class="container">
           <div class="imgbox"><img src="../images/signup.jpg" alt="img"></div>
           <div class="formbox">
-            <form method="post"id = "form_id">
+            <form method="post"id = "form_id" onsubmit="formAction(this)">
               <h2>Sign Up</h2>
               <label for="uname">Username</label><br>
               <input type="text"required name="uname" id="uname"  placeholder="Username" ><br>
               <label for="usertype">Type of user</label><br>
               <select name="usertype" id="usertype" style="color:#5c5c5c;">
-                 <option  style="color:#5c5c5c;" >--Select UserType--</option>
-                <option value="student" style="color:#5c5c5c;">Student</option>
-                <option value="host" style="color:#5c5c5c;">Host</option>
+                 <option  style="color:#5c5c5c;"  >--Select UserType--</option>
+                <option value="student.html"  style="color:#5c5c5c;">Student</option>
+                <option value="host.html" style="color:#5c5c5c;">Host</option>
               </select>
               <br>
               <label for="mail">E-mail</label><br>
               <input type="email" required name="mail" id="mail"  placeholder="User e-mail" ><br>
               <label for="crpword">Create Password</label> <br>
-              <input type="password"required name="crpword" id="crpword"  placeholder="Create Password"
+              <input type="password"  required name="crpword" id="crpword"  placeholder="Create Password"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
               <label for="copword">Confirm Password</label><br>
               <input type="password" required name="copword" id="copword"  placeholder="Confirm Password"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
-              <input id="submit" type="submit" class="submit" value="Submit" ><br>
+              <input id="submit" type="submit" class="submit"  value="Submit" ><br>
             </form>
         </div>
       </div>
@@ -111,29 +116,9 @@
         <i class="social-icon fas fa-envelope"></i>
         <br>
         <button type="button" class="btn btn-outline-secondary  footbtn">
-          <a class="know-more" href="aboutus.html">Know more <i class="fa fa-chevron-right"></i></a>
+          <a class="know-more" href="aboutus.html" >Know more <i class="fa fa-chevron-right"></i></a>
         </button>
       </div>
     </footer>
-    <!--javascrip-->
-    <script src="../javascript/signin.js"></script>
-    <script src="../javascript/theme.js"></script>
-    <script> $(document).ready(function(){
-    $("#usertype").change(function(){
-    var url =  $(this).children(":selected").text(); //get the selected option value
-    switch (url)
-   {
-    case "Student":
-    $("#form_id").attr('action','Student.html');
-    //changing action attribute of form to student.html
-    break;
-    case "Host":
-    $("#form_id").attr('action','host.html');//changing action attribute of form to host.html
-    break;
-    default:
-        $("#form_id").attr('action', '#');
-    }
-    });
-  });</script>
 </body>
 </html>
