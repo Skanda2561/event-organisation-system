@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html >
 
@@ -27,9 +28,60 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon//favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon//favicon-16x16.png">
+<style>
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
 </head>
 <body >
+
+<div class="header">
+  <h1>About Us</h1>
+  <p>Our event website works as the online representative for your event. </p>
+<p> Not only is it the official point of contact for you and your attendees, it is also a reflection of what your event is all about and the ideologies guiding it.</p>
+</div>
 
   <!-- Navbar -->
   <section id="top">
