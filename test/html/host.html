@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -29,6 +29,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon//favicon-16x16.png">
 
 </head>
+
 <body id="host">
   <!-- Navbar -->
 
@@ -67,176 +68,174 @@
   </div>
   <!--user name ,logout-->
   <nav id="user-data" class="navbar navbar-expand-sm sticky-top">
-  <a id="nav-username" class="navbar-brand" href=""><i class="fas fa-users fa-lg">  <p id="nav-username"></p> </i></a>
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-      <button id="logout" class="nav-link btn btn-outline-danger "  onclick="logout()">Logout</button>
-    </li>
-  </ul>
+    <a id="nav-username" class="navbar-brand" href=""><i class="fas fa-users fa-lg">
+        <p id="nav-username"></p>
+      </i></a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button id="logout" class="nav-link btn btn-outline-danger " onclick="logout()">Logout</button>
+      </li>
+    </ul>
   </nav>
   <!--bootstrap navs for user details-->
   <div class="container">
-  <!-- Nav tabs -->
-  <ul class="nav nav-pills justify-content-end" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#upcoming">Upcoming </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#past">Previous</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#create">Create</a>
-    </li>
-  </ul>
+    <!-- Nav tabs -->
+    <ul class="nav nav-pills justify-content-end" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#upcoming">Upcoming </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#past">Previous</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#create">Create</a>
+      </li>
+    </ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div id="upcoming" class="container tab-pane active"><br>
-      <h3>Your Upcoming Events</h3>
-      <main class="wrapper">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="upcoming" class="container tab-pane active"><br>
+        <h3>Your Upcoming Events</h3>
+        <main class="wrapper">
 
-        <section class="card-deck" id="card-deck">
-          <ul>
+          <section class="card-deck" id="card-deck">
+            <ul>
+              <li>
+                <figure>
+                  <img src="../images/dance.jpg" alt="Dance Competition">
+                  <figcaption><h3>Dance Competition</h3></figcaption>
+                </figure>
+                <p>Dance, the movement of the body in a rhythmic way usually to music and within a given space, for the purpose of expressing an idea..</p>
+                <div class="quick-info">
+                  <ul>
+                    <li>Time: 11:30 am </li>
+                    <li>Date: 05/12/2020 </li>
+                    <li>Venue: Indoor Stadium </li>
+                  </ul>
+                </div>
+                <button class="btn btn-small btn-outline-dark " type="button"> Register </button>
+                <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+              </li>
 
-            <li>
-              <figure>
-                <img src="https://source.unsplash.com/jG1z5o7NCq4/1600x900" alt="event-image">
-                <figcaption><h3>Event-name</h3></figcaption>
-              </figure>
-              <p>
-                eventdescription in very few words like 10 to 15 words
-              </p>
-              <div class="quick-info">
-                <ul>
-                  <li>Time:HH:MM IST </li>
-                  <li>Date: DD/MM/YY </li>
-                  <li>Venue: QWERTYUIOP </li>
-                </ul>
-              </div>
-              <button class="btn btn-small btn-outline-dark " type="button"> Register </button>
-              <button class="btn btn-small btn-outline-dark " type="button">See more</button>
-            </li>
-
-            <li>
-              <figure>
-                <img src="https://source.unsplash.com/jG1z5o7NCq4/1600x900" alt="event-image">
-                <figcaption><h3>Event-name</h3></figcaption>
-              </figure>
-              <p>
-                eventdescription in very few words like 10 to 15 words
-              </p>
-              <div class="quick-info">
-                <ul>
-                  <li>Time:HH:MM IST </li>
-                  <li>Date: DD/MM/YY </li>
-                  <li>Venue: QWERTYUIOP </li>
-                </ul>
-              </div>
-              <button class="btn btn-small btn-outline-dark " type="button"> Register </button>
-              <button class="btn btn-small btn-outline-dark " type="button">See more</button>
-            </li>
+              <li>
+                <figure>
+                  <img src="../images/quiz.png" alt="Quiz Time">
+                  <figcaption><h3>Quiz Time</h3></figcaption>
+                </figure>
+                <p>Test your smarts with these fun quizzes about frogs, space, holidays, and more</p>
+                <div class="quick-info">
+                  <ul>
+                    <li>Time: 2:00 pm  </li>
+                    <li>Date: 10/11/2020 </li>
+                    <li>Venue: Auditorium-1 </li>
+                  </ul>
+                </div>
+                <button class="btn btn-small btn-outline-dark " type="button"> Register </button>
+                <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+              </li>
 
 
-          </ul>
-        </section>
-      </main>
 
-    </div>
-    <div id="past" class="container tab-pane fade"><br>
-      <h3>Completed Events</h3>
-      <main class="wrapper">
-
-        <section class="card-deck" id="card-deck">
-          <ul>
-
-            <li>
-              <figure>
-                <img src="https://source.unsplash.com/jG1z5o7NCq4/1600x900" alt="event-image">
-                <figcaption><h3>Event-name</h3></figcaption>
-              </figure>
-              <p>
-                eventdescription in very few words like 10 to 15 words
-              </p>
-              <div class="quick-info">
-                <ul>
-                  <li>Time:HH:MM IST </li>
-                  <li>Date: DD/MM/YY </li>
-                  <li>Venue: QWERTYUIOP </li>
-                </ul>
-              </div>
-              <button class="btn btn-small btn-outline-dark " type="button">See more</button>
-            </li>
-
-            <li>
-              <figure>
-                <img src="https://source.unsplash.com/jG1z5o7NCq4/1600x900" alt="event-image">
-                <figcaption><h3>Event-name</h3></figcaption>
-              </figure>
-              <p>
-                eventdescription in very few words like 10 to 15 words
-              </p>
-              <div class="quick-info">
-                <ul>
-                  <li>Time:HH:MM IST </li>
-                  <li>Date: DD/MM/YY </li>
-                  <li>Venue: QWERTYUIOP </li>
-                </ul>
-              </div>
-              <button class="btn btn-small btn-outline-dark " type="button">See more</button>
-            </li>
-
-            <li>
-              <figure>
-                <img src="https://source.unsplash.com/jG1z5o7NCq4/1600x900" alt="event-image">
-                <figcaption><h3>Event-name</h3></figcaption>
-              </figure>
-              <p>
-                eventdescription in very few words like 10 to 15 words
-              </p>
-              <div class="quick-info">
-                <ul>
-                  <li>Time:HH:MM IST </li>
-                  <li>Date: DD/MM/YY </li>
-                  <li>Venue: QWERTYUIOP </li>
-                </ul>
-              </div>
-              <button class="btn btn-small btn-outline-dark " type="button">See more</button>
-            </li>
-
-
-          </ul>
-        </section>
-      </main>
+            </ul>
+          </section>
+        </main>
 
       </div>
-    <div id="create" class="container tab-pane fade"><br>
-      <form class="" method="post">
-        <h2>Create a New Event</h2><br>
-        <label for="event-name">Event name</label><br>
-        <input type="text" required name="event-name" id="event-name" ><br>
-        <label for="event-desc">Event description</label><br>
-        <input type="text" required name="event-desc" id="event-desc" maxlength="70" ><br>
-        <label for="date-time">Date and time</label><br>
-        <input type="datetime-local" required name="date-time" id="date-time" > <br>
-        <label for="venue">Event venue</label><br>
-        <input type="text" required name="venue" id="venue" maxlength="50" ><br>
-        <label for="mailid">Host e-mail </label><br>
-        <input type="email" name="mailid" ><br>
-        <label for="website">Host website (optional)</label><br>
-        <input type="url" name="website"><br>
-        <label for="poster">Event poster (or) invitation</label><br>
-        <input type="file" name="poster" ><br>
-        <input type="submit" value="Create" onclick="message()"><br>
-      </form>
+      <div id="past" class="container tab-pane fade"><br>
+        <h3>Completed Events</h3>
+        <main class="wrapper">
 
+          <section class="card-deck" id="card-deck">
+            <ul>
+
+              <li>
+                <figure>
+                  <img src="../images/fashion.jpg" alt="Fashion Show">
+                  <figcaption>
+                    <h3>Fashion Show</h3>
+                  </figcaption>
+                </figure>
+                <p>Fashion Technology showcased their wondrous creativity on the dress materials as they presented their creations...</p>
+                <div class="quick-info">
+                  <ul>
+                    <li>Time: 3:15 pm </li>
+                    <li>Date: 15/5/2020 </li>
+                    <li>Venue:Indoor stadium </li>
+                  </ul>
+                </div>
+                <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+              </li>
+
+              <li>
+                <figure>
+                  <img src="../images/photo.jpg" alt="">
+                  <figcaption>
+                    <h3>Photography Competition</h3>
+                  </figcaption>
+                </figure>
+                <p>Show your creatives and models that results in a predetermined visual objective being obtained...</p>
+                <div class="quick-info">
+                  <ul>
+                    <li>Time: 10:00 am </li>
+                    <li>Date: 20/3/2020 </li>
+                    <li>Venue: Rock Garden </li>
+                  </ul>
+                </div>
+                <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+              </li>
+
+              <li>
+                <figure>
+                  <img src="../images/music.jpg" alt="Music Competition">
+                  <figcaption>
+                    <h3>Music Competition</h3>
+                  </figcaption>
+                </figure>
+                <p>Music competitions are a regular part of life for many students who plan to go to music school and seek a career in music..</p>
+                <div class="quick-info">
+                  <ul>
+                    <li>Time: 1:15 pm </li>
+                    <li>Date: 25/2/2020 </li>
+                    <li>Venue: Auditorium </li>
+                  </ul>
+                </div>
+                <button class="btn btn-small btn-outline-dark " type="button">See more</button>
+              </li>
+
+
+            </ul>
+          </section>
+        </main>
+
+      </div>
+      <div id="create" class="container tab-pane fade"><br>
+        <form class="" method="post">
+          <h2>Create a New Event</h2><br>
+          <label for="event-name">Event name</label><br>
+          <input type="text" required name="event-name" id="event-name"><br>
+          <label for="event-desc">Event description</label><br>
+          <input type="text" required name="event-desc" id="event-desc" maxlength="70"><br>
+          <label for="date-time">Date and time</label><br>
+          <input type="datetime-local" required name="date-time" id="date-time"> <br>
+          <label for="venue">Event venue</label><br>
+          <input type="text" required name="venue" id="venue" maxlength="50"><br>
+          <label for="mailid">Host e-mail (optional) </label><br>
+          <input type="email" name="mailid"><br>
+          <label for="website">Host/registration website </label><br>
+          <input type="url" name="website"><br>
+          <label for="poster">Event poster (or) invitation</label><br>
+          <input type="file" name="poster"><br>
+          <input type="submit" value="Create" onclick="message()"><br>
+        </form>
+
+      </div>
     </div>
   </div>
-</div>
 
 
   <!-- Footer -->
 
-  <footer  id="footer">
+  <footer id="footer">
     <div class="container-fluid abtus">
       <i class="social-icon fab fa-facebook-f"></i>
       <i class="social-icon fab fa-twitter"></i>
@@ -253,4 +252,5 @@
 
 
 </body>
+
 </html>
