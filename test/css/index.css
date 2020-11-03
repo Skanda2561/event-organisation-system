@@ -1,0 +1,14 @@
+.our-goal .grid-container {
+  display: grid;
+  width: 90%;
+  grid-template-columns: auto auto auto;
+  grid-gap:1.5rem;
+  padding: 2rem;
+}
+.our-goal .grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius:1rem;
+}

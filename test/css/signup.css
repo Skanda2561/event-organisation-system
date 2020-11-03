@@ -14,7 +14,7 @@ body{
 }
 .signup{
   position: relative;
-  min-height: 100vh;
+  min-height: 95vh;
   background: var(--shade2);
   display: flex;
   justify-content: center;
