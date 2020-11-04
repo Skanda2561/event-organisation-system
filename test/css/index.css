@@ -1,7 +1,7 @@
 .our-goal .grid-container {
   display: grid;
   width: 90%;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(299px, 1fr));
   grid-gap:1.5rem;
   padding: 2rem;
 }
@@ -11,4 +11,9 @@
   font-size: 30px;
   text-align: center;
   border-radius:1rem;
+}
+.body-wrapper, .wrapper{
+  width: 90%;
+  margin:10px 5% ;
+  padding:10px;
 }
