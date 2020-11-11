@@ -2,18 +2,164 @@
   display: grid;
   width: 90%;
   grid-template-columns: repeat(auto-fit, minmax(299px, 1fr));
-  grid-gap:1.5rem;
+  grid-gap: 1.5rem;
   padding: 2rem;
 }
+
 .our-goal .grid-item {
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  border-radius:1rem;
+  border-radius: 1rem;
 }
-.body-wrapper, .wrapper{
-  width: 90%;
-  margin:10px 5% ;
-  padding:10px;
+
+.body-wrapper, .wrapper {
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.body-wrapper .boxsm {
+  height: 200px;
+  display: flex;
+  padding-left: 15px;
+  margin: 1rem;
+}
+
+.body-wrapper .boxsm h2 {
+  font-size: 2.5rem;
+}
+
+.body-wrapper .boxsm span {
+  font-size: 1.25rem;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 110vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: #FFF !important;
+  background-image: url("../images/back.jpg");
+  background-size: cover;
+  animation: fade 0.5s ease-in;
+}
+
+.cover .swipe {
+  position: relative;
+  width: fit-content;
+}
+
+.cover .swipe::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  width: 0%;
+  height: 100%;
+  background-color: #FF5858;
+  animation: swipe 1.5s ease-out 1s forwards;
+}
+
+.cover .swipe--delay::after {
+  background-color: #FFF;
+  animation-delay: 1.5s;
+}
+
+.cover .swipe h1 {
+  display: block;
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  opacity: 0;
+  animation: fade 0.01s ease-out 1.75s forwards;
+}
+
+.cover .swipe h3 {
+  display: block;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  opacity: 0;
+  animation: fade 0.01s ease-out 2.25s forwards;
+}
+
+.cover .text-typing {
+  padding: 20px 30px;
+  background: rgba(245, 245, 245, 0.05);
+  font-size: 35px;
+  font-family: monospace;
+  border-radius: 50px;
+  opacity: 0;
+  animation-delay: 2.2s;
+  animation: fade 0.01s ease-out 2.25s forwards;
+}
+
+.cover .text-typing p {
+  margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(29, end) forwards, blink 1s infinite;
+  animation-delay: 2.5s;
+}
+
+@keyframes typing {
+  0% {
+    width: 0%
+  }
+
+  100% {
+    width: 100%
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-right: 2px solid transparent;
+  }
+
+  50% {
+    border-right: 2px solid #f5f5f5;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes swipe {
+  0% {
+    right: 100%;
+    left: 0;
+    width: 0%;
+  }
+
+  50% {
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  100% {
+    right: 0;
+    left: 100%;
+    width: 0%;
+  }
 }
