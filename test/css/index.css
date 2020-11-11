@@ -163,3 +163,16 @@
     width: 0%;
   }
 }
+.logo{
+padding-left: 35px;
+margin: auto;
+width: 180px;
+padding-right: 10px;
+}
+#PhaseShift{
+  width: 250px;
+  height: 200px;
+}
+#IEEE{
+  width: 200px;
+}
