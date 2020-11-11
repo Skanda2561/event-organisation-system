@@ -8,7 +8,7 @@
 
   <title>Event-plazA</title>
   <!-- Font Awesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.10.0/js/all.js"></script>
 
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -66,29 +66,44 @@
     </div>
 
   </div>
-  <div class="box">
-    <div class="content">
+
+  <section class="content">
+    <img src="../images/p/1.png" alt="img" data-speed="1" class="layer">
+    <img src="../images/p/2.png" alt="img" data-speed="-3" class="layer">
+    <img src="../images/p/3.png" alt="img" data-speed="-4" class="layer">
+    <img src="../images/p/4.png" alt="img" data-speed="-9" class="layer">
+    <img src="../images/p/5.png" alt="img" data-speed="2" class="layer">
+    <img src="../images/p/6.png" alt="img" data-speed="-7" class="layer">
+    <img src="../images/p/7.png" alt="img" data-speed="4" class="layer">
+    <img src="../images/p/8.png" alt="img" data-speed="-0.5" class="layer">
+    <img src="../images/p/9.png" alt="img" data-speed="-1" class="layer">
+    <img src="../images/p/10.png" alt="img" data-speed="8" class="layer">
+    <img src="../images/p/11.png" alt="img" data-speed="7" class="layer">
+    <img src="../images/p/12.png" alt="img" data-speed="9" class="layer">
+    <div class="text">
       <h1>About Us</h1>
-      <p>Our event website works as the online representative for your event. </p><br>
-      <p> Not only is it the official point of contact for you and your attendees, it is also a reflection of what your event is all about and the ideologies guiding it.</p><br>
+      <p>Our event website works as the online representative for your event. </p>
+      <p> Not only is it the official point of contact for you and your attendees, it is also a reflection of what your event is all about and the ideologies guiding it.</p>
       <h2>OUR MISSION</h2><br>
       <ul>
-        <li>Increase Students participation..</li><br>
-        <li>Introducing new and challenging ideas.</li><br>
-        <li>Education, training and volunteering programmes.</li><br>
-        <li> Specific to areas of the event..</li><br>
-        <li>Timed within the event schedule.</li><br>
+        <li> <i class="fas fa-id-badge fa-2x"></i><strong> Increase Students participation..</strong> <br>
+          <p>Our event website is the main source to provide attendees with event info, sessions, speakers, agenda, and more.  </p>
+        </li>
+        <li> <i class="fa fa-hands-helping fa-2x"></i><strong>Introducing new and challenging ideas.</strong> <br>
+          <p>Attendees learn everything they need to know about the meeting or event, and in turn, you gather everything needed to carry it out with digital ease. </p>
+        </li>
+        <li><i class="fas fa-chalkboard-teacher fa-2x"></i> <strong>Education, training and volunteering programmes.</strong> <br>
+          <p>Attendees need to receive a lot of data that will be important for making the most of the event. The registration specifics, fees, schedule, venue map, dates, types of activities, biographies of speakers, etc. will all matter. </p>
+        </li>
+        <li><i class="fas fa-unlock-alt fa-2x"></i> <strong>Smooth conduction of events</strong> <br>
+          <p>We also organise events with IEEE,NSS,NCC,HIKING(MOUNTAIN) and many more clubs....</p>
+          <p>No keeping track of 1,000 email responses or manually tallying up information. The time and money saved on data entry administrative tasks can be used to better the event, contact more sponsors, prepare more activities, or reply faster to participants.</p>
+        </li>
       </ul>
-      <p>Our event website is the main source to provide attendees with event info, sessions, speakers, agenda, and more.  </p><br>
-      <p>Attendees learn everything they need to know about the meeting or event, and in turn, you gather everything needed to carry it out with digital ease. </p><br>
-      <p>We also organise events on IEEE,NSS,NCC,HIKING(MOUNTAIN) and many more events....</p><br>
-      <p>No keeping track of 1,000 email responses or manually tallying up information. The time and money saved on data entry administrative tasks can be used to better the event, contact more sponsors, prepare more activities, or reply faster to participants.</p><br>
-      <p>Attendees need to receive a lot of data that will be important for making the most of the event. The registration specifics, fees, schedule, venue map, dates, types of activities, biographies of speakers, etc. will all matter. </p><br>
       <p>Having to send this information individually or print it out could potentially result in chaos.so to deal with this type of situation we hae made a well organised website <b><i>"EVENTS ORGAINSATION SYSTEM"...</b></i></p><br>
 
     </div>
-
-  </div>
+  </section>
 
     <div class="newsletter " >
       <form class=""  method="post">
@@ -126,7 +141,18 @@
     }
   }
 </script>
+<script type="text/javascript">
+  document.body.addEventListener('mousemove',e => {
+    document.querySelectorAll(".layer").forEach(layer => {
+      let speed = layer.getAttribute("data-speed");
 
+      let x = (window.innerWidth - e.pageX*speed)/100;
+      let y = (window.innerHeight - e.pageY*speed)/100;
+
+      layer.style.transform ='translateX('+x+'px) translateY('+y+'px)';
+    });
+  });
+</script>
 </body>
 </html>
 
