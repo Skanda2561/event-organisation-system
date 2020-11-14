@@ -1,9 +1,10 @@
 .our-goal .grid-container {
   display: grid;
-  width: 90%;
+  width: 85%;
   grid-template-columns: repeat(auto-fit, minmax(299px, 1fr));
   grid-gap: 1.5rem;
-  padding: 2rem;
+  padding: 0.5rem;
+  margin: auto;
 }
 
 .our-goal .grid-item {
@@ -12,6 +13,7 @@
   font-size: 30px;
   text-align: center;
   border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .body-wrapper, .wrapper {
@@ -23,30 +25,34 @@
 
 .body-wrapper .boxsm {
   height: 200px;
-  display: flex;
-  padding-left: 15px;
-  margin: 1rem;
+  display: block;
+  padding-left: 0.8rem;
+  padding-bottom: 1.5rem;
 }
 
-.body-wrapper .boxsm h2 {
+.body-wrapper .boxsm .heading {
   font-size: 2.5rem;
+  width: 100%;
 }
 
-.body-wrapper .boxsm span {
+.body-wrapper .boxsm .text {
   font-size: 1.25rem;
+  width: 100%;
+  padding:10px;
+  float: right;
 }
 
 .cover {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  min-height: 110vh;
+  width: 100%;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: #222;
   color: #FFF !important;
   background-image: url("../images/back.jpg");
-  background-size: cover;
+  background-size:cover;
   animation: fade 0.5s ease-in;
 }
 
@@ -75,33 +81,34 @@
 
 .cover .swipe h1 {
   display: block;
-  font-size: 72px;
+  font-size: 4vw;
   line-height: 1;
   font-weight: 900;
   text-transform: uppercase;
-  padding: 15px 25px;
+  padding: 1rem 1.5rem;
   opacity: 0;
   animation: fade 0.01s ease-out 1.75s forwards;
 }
 
 .cover .swipe h3 {
   display: block;
-  font-size: 32px;
+  font-size: 2vw;
   line-height: 1;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
-  padding: 10px 15px;
+  padding: 0.7rem 1rem;
   opacity: 0;
   animation: fade 0.01s ease-out 2.25s forwards;
 }
 
 .cover .text-typing {
-  padding: 20px 30px;
+  padding: 20px 10px;
   background: rgba(245, 245, 245, 0.05);
-  font-size: 35px;
+  font-size: 2vw;
   font-family: monospace;
   border-radius: 50px;
   opacity: 0;
+  content: ""
   animation-delay: 2.2s;
   animation: fade 0.01s ease-out 2.25s forwards;
 }
@@ -112,6 +119,14 @@
   overflow: hidden;
   animation: typing 2s steps(29, end) forwards, blink 1s infinite;
   animation-delay: 2.5s;
+}
+
+.brand-logo{
+  max-width: 130px;
+  max-height: 130px;
+  height: auto;
+  padding: 10px;
+  margin: auto;
 }
 
 @keyframes typing {
@@ -163,16 +178,25 @@
     width: 0%;
   }
 }
-.logo{
-padding-left: 35px;
-margin: auto;
-width: 180px;
-padding-right: 10px;
-}
-#PhaseShift{
-  width: 250px;
-  height: 200px;
-}
-#IEEE{
-  width: 200px;
+@media (max-width:600px){
+  .cover {
+    background-size:contain;
+    background-repeat:no-repeat;
+    min-height: 30vh;
+    max-height: 50vh;
+  }
+
+  .cover .swipe h1 {
+    font-size: 6vw;
+  }
+
+  .cover .swipe h3 {
+    font-size: 3vw;
+  }
+
+  .cover .text-typing {
+    font-size: 3vw;
+    padding: 5px;
+  }
+
 }

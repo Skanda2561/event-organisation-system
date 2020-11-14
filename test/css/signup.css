@@ -127,7 +127,11 @@ box-shadow:0 15px 50px rgba(0, 0, 0, 0.03);
     width:100%;
   }
 }
-
+@media (max-width:460px){
+  .signup .container{
+    max-width:300px;
+  }
+}
 
 /*mediaquery for dark mode*/
 @media (prefers-color-scheme: dark) {
