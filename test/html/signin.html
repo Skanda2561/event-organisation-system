@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -30,7 +30,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon//favicon-16x16.png">
 
 </head>
-<body >
+
+<body>
   <!-- Navbar -->
 
   <nav class="navbar navbar-expand-lg navbar-light ">
@@ -64,61 +65,61 @@
 
   <!--SIGNIN SECTION-->
   <section class="login">
-  <div class="container">
-    <div class="user studs">
-      <div class="imgbox"><img src="../images/studentsm.png" alt="student" style="left:76px; ;"></div>
-      <div class="formbox">
-        <form>
-          <h2>Student Signin</h2>
-          <label for="studname">Username</label><br>
-          <input type="text" required name="studname" id="studname"  placeholder="Username" ><br>
-          <label for="spword">Password</label><br>
-          <input type="password" required name="spword" id="spword" placeholder="Password" minlength="8"><br>
-          <input type="submit" name="" value="Login" onclick="studlogin();"><br>
-          <p class="host">Are you a host ? <a href="#" onclick="toggleForm();" >Host Signin </a> </p>
-        </form>
+    <div class="container">
+      <div class="user studs">
+        <div class="imgbox"><img src="../images/studentsm.png" alt="student" style="left:76px; ;"></div>
+        <div class="formbox">
+          <form>
+            <h2>Student Signin</h2>
+            <label for="studname">Username</label><br>
+            <input type="text" required name="studname" id="studname" placeholder="Username"><br>
+            <label for="spword">Password</label><br>
+            <input type="password" required name="spword" id="spword" placeholder="Password" minlength="8"><br>
+            <input type="submit" name="" value="Login" onclick="studlogin();"><br>
+            <p class="host">Are you a host ? <a href="#" onclick="toggleForm();">Host Signin </a> </p>
+          </form>
+        </div>
+      </div>
+      <div class="user hosts">
+        <div class="formbox">
+          <form method="post">
+            <h2>Host Signin</h2>
+            <label for="hostname">Username</label><br>
+            <input type="text" required name="hostname" id="hostname" placeholder="Username"><br>
+            <label for="hpword">Password</label><br>
+            <input type="password" required name="hpword" id="hpword" placeholder="Password" minlength="8"><br>
+            <input type="submit" name="" value="Login" onclick="hostlogin()"><br>
+            <p class="students">Are you a student ? <a href="#" onclick="toggleForm();">Student Signin </a> </p>
+          </form>
+        </div>
+        <div class="imgbox"><img src="../images/hosts.png" alt="" style="bottom:5px; "></div>
       </div>
     </div>
-    <div class="user hosts">
-      <div class="formbox">
-        <form method="post">
-          <h2>Host Signin</h2>
-          <label for="hostname">Username</label><br>
-          <input type="text" required name="hostname" id="hostname"  placeholder="Username" ><br>
-          <label for="hpword">Password</label><br>
-          <input type="password" required name="hpword" id="hpword" placeholder="Password" minlength="8" ><br>
-          <input type="submit" name="" value="Login" onclick="hostlogin()"><br>
-          <p class="students">Are you a student ? <a href="#" onclick="toggleForm();" >Student Signin </a> </p>
-        </form>
-      </div>
-      <div class="imgbox"><img src="../images/hosts.png" alt="" style="bottom:5px; "></div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <div class="user-prompt">
-    <p class="signup-prompt">Don't have an account ?   <a href="signup.html" onclick="userSignup();" > Sign Up </a> </p><br>
+    <p class="signup-prompt">Don't have an account ? <a href="signup.html" onclick="userSignup();"> Sign Up </a> </p><br>
   </div>
 
 
   <!-- Footer -->
 
   <footer id="footer">
-    <div class="copy-rights" >
-      <div class="foot names" >
+    <div class="copy-rights">
+      <div class="foot names">
         This website was created by<br>
-        S K Balaji  : 1BM19CS134 S Skanda    : 1BM19CS137<br>
-        Sai Praveen : 1BM19CS137 Saquib      : 1BM19CS137 <br>
+        S K Balaji : 1BM19CS134 S Skanda : 1BM19CS137<br>
+        Sai Praveen : 1BM19CS138 Saquib : 1BM19CS144 <br>
         for the project work of third semester.
       </div>
-      <div class="foot desc" >
+      <div class="foot desc">
         The aim of the website is to help colleges,<br>
         student clubs, NGO ... to put up their events <br>
         or activites online. Also, to help students <br>
         participate in these.
       </div>
     </div>
-    <div class="container-fluid abtus" >
+    <div class="container-fluid abtus">
       <i class="fab fa-facebook-f fa-lg" style="color: #00acee ;"></i>
       <i class="fab fa-twitter fa-lg" style="color: #0764b9 ;"></i>
       <i class="fab fa-instagram fa-lg" style="color:#833AB4 ;"></i>
@@ -134,4 +135,5 @@
   <script src="../javascript/theme.js"></script>
 
 </body>
+
 </html>

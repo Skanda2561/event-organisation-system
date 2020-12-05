@@ -18,7 +18,7 @@ body{
 }
 /* events section */
 section{
-  padding:10px, 10px;
+  padding:10px, 5px;
   padding-bottom: 4rem;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ section{
 }
 
 #card-deck button {
-  background-color: var(--shade2);
+  background: rgba(125, 234, 245, 0.5);
   color: var(--text);
   border-radius: 20px;
   text-align: center;
@@ -45,7 +45,8 @@ section{
 }
   /* card styles */
   #card-deck {
-    padding: 36px;
+    padding: 3px;
+    margin: auto;
   }
 
   #card-deck > ul {
@@ -61,7 +62,7 @@ section{
   }
 
   #card-deck > ul > li {
-    border: 2px solid var(--shade2);
+    border: 1.5px solid var(--shade2);
     background: var(--shade1);
     border-radius: 15px;
   }
@@ -105,7 +106,7 @@ section{
     grid-gap: 3px;
     padding:5px;
     list-style-type: none;
-    width: 100%;
+    width: 85%;
   }
   #card-deck > ul > li > div >ul > li{
     display: grid;
