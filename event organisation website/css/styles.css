@@ -18,7 +18,7 @@ body{
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif !important;
-  color:var(--text) ;
+
 }
 html {
   scroll-behavior: smooth;
@@ -31,6 +31,7 @@ body{
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 16px;
+  color:var(--text) !important;
 }
 /* navbar section*/
 .navbar {
@@ -89,32 +90,33 @@ color:var(--text) !important;
   background-color: var(--shade4) ;
   text-align:center;
   width: 100%;
-  padding-bottom: 0;
+  padding: 15px;
+  padding-bottom: 7px;
 }
-#footer abtus{
-  padding:5px;
-  height:30px;
-  border-radius: 15px;
-  background: var(--shade1) ;
+#footer .copy-rights{
+  text-align:left;
+  padding: 1rem;
+  display:flex;
+  margin: 0 auto ;
+  font-size: 1vw;
 }
-.social-icon {
+#footer .copy-rights .foot{
+  width:50%;
+  color:#F9F6F7;
+  padding:1rem;
+}
+.fa-lg {
   margin:15px;
-  border: 10px;
-  height:40px;
-  width:40px;
-  background
+  border: 7px;
 }
 .footbtn{
   margin: 20px 10px;
-  align-self: auto;
-  coror:var(--shade1);
 }
 .footbtn:hover{
-  background-color: var(--shade3);
-  color: #000;
+  background-color: #BAE8E8;
 }
 .know-more:link, .know-more:visited {
-  color:#000;
+  color:#F9F6F7;
   text-decoration: none;
 }
 
