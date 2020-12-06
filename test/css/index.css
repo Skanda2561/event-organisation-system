@@ -108,7 +108,7 @@
   font-family: monospace;
   border-radius: 50px;
   opacity: 0;
-  content: ""
+  content: "";
   animation-delay: 2.2s;
   animation: fade 0.01s ease-out 2.25s forwards;
 }
@@ -127,6 +127,7 @@
   height: auto;
   padding: 10px;
   margin: auto;
+  margin-left: 19px;
 }
 
 @keyframes typing {

@@ -36,7 +36,7 @@ body{
 /* navbar section*/
 .navbar {
   background-color:var(--shade3) !important;
-  opacity: 0.85
+  opacity: 0.85;
 }
 .nav-item{
 border-radius: 20px;
@@ -136,5 +136,29 @@ color:var(--text) !important;
     --shade3:#BAE8E8;
     --shade4:#272343 ;
     --text:#000;
+  }
+}
+.navbar-nav{
+  animation: nav-load 500ms ease-in;
+
+}
+@keyframes nav-load{
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+  transform :  translateY(0);
+}
+}
+.navbar-brand{
+  animation: nav-brand-load 400ms ease-in;
+  
+}
+@keyframes nav-brand-load {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0);
   }
 }
