@@ -22,7 +22,7 @@ section{
   padding-bottom: 4rem;
   display: flex;
   justify-content: center;
-  align-items:
+  
 }
 
 #card-deck button {
@@ -30,12 +30,13 @@ section{
   color: var(--text);
   border-radius: 20px;
   text-align: center;
-  display: inline-block;
+ 
   transition:.3s;
   border-style: none;
   margin-left:15px;
   margin-bottom: 20px;
   height: 40px;
+  float: right;
 }
 
 #card-deck button:hover {
@@ -125,7 +126,14 @@ section{
     padding: .5rem 1rem;
     margin: .5rem;
   }
+@media(max-width:989px){
+li{
+margin: auto;
+font-size: 0.8rem;
+font-weight: 100;
+}
 
+}
 
 /*mediaquery for dark mode*/
 @media (prefers-color-scheme: dark) {
@@ -144,4 +152,57 @@ section{
     --shade4:#272343 ;
     --text:#000;
   }
+
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.col-2{
+  flex-basis: 50%;
+  min-width: 200px;
+}
+.col-2 img{
+  max-width: 100%;
+  padding: 10px 0;
+}
+.modal-body.col-3{
+  flex-basis: 33%;
+  min-width: 150px;
+  font-size: 0.9rem;
+}
+table td,th{
+  padding: 0 2rem ;
+}
+.modal-header{
+  background-color:var(--shade3) !important;
+  opacity: 0.85;
+}
+.modal-footer{
+  background-color: var(--shade4) ;
+  color:#F9F6F7;
+}
+.modal-body{
+  background-color: var(--shade1);
+  --text:#000;
+}
+.modal-body.dark-theme{
+  background-color: var(--shade4);
+  color: #E3F6F5;
+}
+.modal-header.dark-theme{
+  background-color: var(--text);
+  color: #272343 ;
+}
+.fade{
+    /* Full height */
+    height: 100%;
+ width: fit-content;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
