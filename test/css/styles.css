@@ -162,3 +162,12 @@ color:var(--text) !important;
     transform: translateX(0);
   }
 }
+ 
+  .fa-lg:hover {
+      transform: translateY(-4px);
+      transition:0.3s;
+  }
+  #logo:hover{
+    transform: translateY(-4px);
+    transition:0.3s;
+  }

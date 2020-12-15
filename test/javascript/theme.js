@@ -29,3 +29,9 @@ btn.addEventListener("click", function() {
   // Finally, let's save the current preference to localStorage to keep using it
   localStorage.setItem("theme", theme);
 });
+let stateCheck = setInterval(() => {
+  if (document.readyState === 'complete') {
+    clearInterval(stateCheck);
+    // document ready
+  }
+}, 100);

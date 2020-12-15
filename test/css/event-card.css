@@ -144,6 +144,7 @@ font-weight: 100;
     --shade3:#211E1C;
     --shade4:#191715;
     --text:#f9f6f7;
+    --shade5 : #cfd4d6a9;
   }
   body.light-theme {
     --shade1:#F9F6F7;
@@ -151,6 +152,7 @@ font-weight: 100;
     --shade3:#BAE8E8;
     --shade4:#272343 ;
     --text:#000;
+    --shade5:#6265669c;
   }
 
 }
@@ -206,5 +208,6 @@ table td,th{
     background-repeat: no-repeat;
     background-size: cover;
 }
-tr:nth-child(even){background-color: #f2f2f2;}
-tr:hover {background-color: #ddd;}
+tr:nth-child(even){background-color: #e3e2e9b4}
+tr:nth-child(even).dark-theme{background-color: #898f94ec;}
+tr:hover {background-color: var(--shade3);}
