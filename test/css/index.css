@@ -122,12 +122,13 @@
 }
 
 .brand-logo{
-  max-width: 130px;
-  max-height: 130px;
+  max-width: 120px;
+  max-height: 120px;
   height: auto;
   padding: 10px;
   margin: auto;
   margin-left: 19px;
+  display: inline-block;
 }
 
 @keyframes typing {
