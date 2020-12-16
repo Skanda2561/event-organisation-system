@@ -1,18 +1,20 @@
-body{
-  --shade1:#F9F6F7;
-  --shade2:#E3F6F5;
-  --shade3:#BAE8E8;
-  --shade4:#272343 ;
-  --text:#000;
+body {
+  --shade1: #F9F6F7;
+  --shade2: #E3F6F5;
+  --shade3: #BAE8E8;
+  --shade4: #272343;
+  --text: #000;
 }
-.dark-theme{
-  --shade1:#343A40;
-  --shade2:#282423;
-  --shade3:#211E1C;
-  --shade4:#191715;
-  --text:#f9f6f7;
+
+.dark-theme {
+  --shade1: #343A40;
+  --shade2: #282423;
+  --shade3: #211E1C;
+  --shade4: #191715;
+  --text: #f9f6f7;
 }
-.signup{
+
+.signup {
   position: relative;
   min-height: 95vh;
   background: var(--shade2);
@@ -22,18 +24,19 @@ body{
   padding: 10px 20px;
 }
 
-.signup .container{
+.signup .container {
   position: absolute;
   width: 800px;
   height: 600px;
   padding: 0;
   margin: 0;
   background: var(--shade3);
-  box-shadow:0 15px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   border-radius: 12px;
 }
-.signup .container  .imgbox{
+
+.signup .container .imgbox {
   position: relative;
   height: 100%;
   width: 50%;
@@ -41,12 +44,14 @@ body{
   transition: 0.5s;
   float: right;
 }
-.signup .container  .imgbox img{
+
+.signup .container .imgbox img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.signup .container  .formbox {
+
+.signup .container .formbox {
   position: relative;
   display: flex;
   justify-content: center;
@@ -58,7 +63,7 @@ body{
   transition: 0.6s;
 }
 
-.signup .container  .formbox form h2{
+.signup .container .formbox form h2 {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -66,7 +71,8 @@ body{
   margin-bottom: 15px;
   transition: 0.6s;
 }
-.signup .container  .formbox form input,select {
+
+.signup .container .formbox form input, select {
   width: 100%;
   padding: 10px;
   border: none;
@@ -82,7 +88,7 @@ body{
   transition: 0.6s;
 }
 
-.signup .container .formbox form input[type="submit"]{
+.signup .container .formbox form input[type="submit"] {
   min-width: 100px;
   transition: 0.5s;
   font-size: 14px;
@@ -90,64 +96,71 @@ body{
   letter-spacing: 1px;
   cursor: pointer;
   transition: 0.6s;
-
 }
-.signup .container .formbox form input[type="submit"]:hover{
-  background:var(--shade4) ;
+
+.signup .container .formbox form input[type="submit"]:hover {
+  background: var(--shade4);
   color: #FFF !important;
   opacity: 0.75;
 }
-.signup .container .formbox form input a{
+
+.signup .container .formbox form input a {
   text-decoration: none;
   font-weight: 500;
 }
-.signup .container .formbox form input a:hover{
-    text-decoration: none;
-    font-weight: 600;
+
+.signup .container .formbox form input a:hover {
+  text-decoration: none;
+  font-weight: 600;
 }
 
-
-.user-prompt{
-display: flex;
-justify-content: center;
-align-items: center;
-background: var(--shade2);
-padding: 3% auto;
-box-shadow:0 15px 50px rgba(0, 0, 0, 0.03);
+.user-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--shade2);
+  padding: 3% auto;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.03);
 }
+
 /*media query to make the form width 100%on small screen*/
-@media (max-width:900px){
-  .signup .container{
-    max-width:450px;
+@media (max-width:900px) {
+  .signup .container {
+    max-width: 450px;
   }
-  .signup .container .imgbox{
-    display:none;
+
+  .signup .container .imgbox {
+    display: none;
   }
-  .signup .container .formbox{
-    width:100%;
+
+  .signup .container .formbox {
+    width: 100%;
   }
 }
-@media (max-width:460px){
-  .signup .container{
-    max-width:300px;
+
+@media (max-width:460px) {
+  .signup .container {
+    max-width: 300px;
   }
 }
 
 /*mediaquery for dark mode*/
 @media (prefers-color-scheme: dark) {
+
   /* defaults to dark theme */
   body {
-    --shade1:#343A40;
-    --shade2:#282423;
-    --shade3:#211E1C;
-    --shade4:#191715;
-    --text:#f9f6f7;
+    --shade1: #343A40;
+    --shade2: #282423;
+    --shade3: #211E1C;
+    --shade4: #191715;
+    --text: #f9f6f7;
   }
+
   body.light-theme {
-    --shade1:#F9F6F7;
-    --shade2:#E3F6F5;
-    --shade3:#BAE8E8;
-    --shade4:#272343 ;
-    --text:#000;
+    --shade1: #F9F6F7;
+    --shade2: #E3F6F5;
+    --shade3: #BAE8E8;
+    --shade4: #272343;
+    --text: #000;
   }
 }

@@ -38,7 +38,7 @@
 .body-wrapper .boxsm .text {
   font-size: 1.25rem;
   width: 100%;
-  padding:10px;
+  padding: 10px;
   float: right;
 }
 
@@ -52,7 +52,7 @@
   background-color: #222;
   color: #FFF !important;
   background-image: url("../images/back.jpg");
-  background-size:cover;
+  background-size: cover;
   animation: fade 0.5s ease-in;
 }
 
@@ -121,7 +121,7 @@
   animation-delay: 2.5s;
 }
 
-.brand-logo{
+.brand-logo {
   max-width: 120px;
   max-height: 120px;
   height: auto;
@@ -180,10 +180,11 @@
     width: 0%;
   }
 }
-@media (max-width:600px){
+
+@media (max-width:600px) {
   .cover {
-    background-size:contain;
-    background-repeat:no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
     min-height: 30vh;
     max-height: 50vh;
   }
@@ -200,5 +201,4 @@
     font-size: 3vw;
     padding: 5px;
   }
-
 }

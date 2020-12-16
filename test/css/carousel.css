@@ -1,58 +1,65 @@
-body{
-  --shade1:#F9F6F7;
-  --shade2:#E3F6F5;
-  --shade3:#BAE8E8;
-  --shade4:#272343 ;
-  --text:#000;
+body {
+  --shade1: #F9F6F7;
+  --shade2: #E3F6F5;
+  --shade3: #BAE8E8;
+  --shade4: #272343;
+  --text: #000;
 }
-.dark-theme{
-  --shade1:#343A40;
-  --shade2:#282423;
-  --shade3:#211E1C;
-  --shade4:#191715;
-  --text:#f9f6f7;
+
+.dark-theme {
+  --shade1: #343A40;
+  --shade2: #282423;
+  --shade3: #211E1C;
+  --shade4: #191715;
+  --text: #f9f6f7;
 }
+
 html, body {
-height:100%;
-margin:0;
-padding:0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
 .carousel-caption {
-z-index: 10;
+  z-index: 10;
 }
-.carousel-item img{
+
+.carousel-item img {
   width: 100%;
-  height:auto;
-  max-height:650px;
+  height: auto;
+  max-height: 650px;
   background-attachment: fixed;
 }
+
 .carousel-indicators li {
   width: 10px;
   height: 10px;
   border-radius: 100%;
   margin: 0 8px;
 }
-.carousel-controller{
+
+.carousel-controller {
   padding-top: auto;
   padding-bottom: auto;
 }
 
-
 /*mediaquery for dark mode*/
 @media (prefers-color-scheme: dark) {
+
   /* defaults to dark theme */
   body {
-    --shade1:#343A40;
-    --shade2:#282423;
-    --shade3:#211E1C;
-    --shade4:#191715;
-    --text:#f9f6f7;
+    --shade1: #343A40;
+    --shade2: #282423;
+    --shade3: #211E1C;
+    --shade4: #191715;
+    --text: #f9f6f7;
   }
+
   body.light-theme {
-    --shade1:#F9F6F7;
-    --shade2:#E3F6F5;
-    --shade3:#BAE8E8;
-    --shade4:#272343 ;
-    --text:#000;
+    --shade1: #F9F6F7;
+    --shade2: #E3F6F5;
+    --shade3: #BAE8E8;
+    --shade4: #272343;
+    --text: #000;
   }
 }

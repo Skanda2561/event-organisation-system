@@ -1,22 +1,23 @@
-document.getElementById("nav-username").innerHTML+= (" "+localStorage.getItem("username"));
-function logout(){
+document.getElementById("nav-username").innerHTML += (" " + localStorage.getItem("username"));
+
+function logout() {
   location.replace("signin.html");
   localStorage.removeItem("username");
   return;
 }
 
 function message() {
-  var x=0;
+  var x = 0;
   var name = document.getElementById('event-name').value;
   var desc = document.getElementById('event-desc').value;
   var datetime = document.getElementById('date-time').value;
   var venue = document.getElementById('venue').value;
-  if (name==""||desc==""||datetime==""||venue=="") {
+  if (name == "" || desc == "" || datetime == "" || venue == "") {
     alert("Fill all required data!!");
-    x=-1;
+    x = -1;
   }
 
-  if (x==0) {
+  if (x == 0) {
     alert("Thank you for trusting us. Your responses are recorded, we will contact you for confirmation and reflect the changes.")
   }
 
