@@ -13,7 +13,6 @@
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/styles.css">
@@ -73,14 +72,15 @@
     <div class="container">
       <div class="imgbox"><img src="../images/signup.jpg" alt="img"></div>
       <div class="formbox">
-        <form method="post">
+        <form  id="myform" method="post" name="myform">
           <h2>Sign Up</h2>
           <label for="uname">Username</label><br>
           <input type="text" required name="uname" id="uname" placeholder="Username"><br>
           <label for="usertype">Type of user</label><br>
           <select name="usertype" id="usertype" style="color:#5c5c5c;">
-            <option value="student" style="color:#5c5c5c;">Student</option>
-            <option value="host" style="color:#5c5c5c;">Host</option>
+            <option  >Select User Type</option>
+            <option  >Student</option>
+            <option  >Host</option>
           </select>
           <br>
           <label for="mail">E-mail</label><br>
@@ -91,7 +91,7 @@
           <label for="copword">Confirm Password</label><br>
           <input type="password" required name="copword" id="copword" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
-          <input type="submit" name="" value="Sign Up" onclick="registerUser()"><br>
+          <input   class="submit" id="submit" type="submit" value="Submit"><br>
         </form>
       </div>
     </div>
@@ -133,7 +133,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="../javascript/signin.js"></script>
   <script src="../javascript/theme.js"></script>
-
+<script src="../javascript/SignUp.js"></script>
 </body>
 
 </html>

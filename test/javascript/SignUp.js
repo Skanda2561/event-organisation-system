@@ -10,3 +10,24 @@ if(password==cpassword){
   else 
   alert("Passwords do not match. Please check and try again!!! ")
  }
+ $(document).ready(function() {
+  // Function to change form action.
+  $("#usertype").change(function() {
+  var selected = $(this).children(":selected").text();
+  switch (selected) {
+  case "Student":
+  $("#myform").attr('action', '../html/student.html');
+  break;
+  case "Host":
+  $("#myform").attr('action', 'host.html');
+  break;
+  default:
+  $("#myform").attr('action', '#');
+  }
+  });
+  // Function For Back Button
+  $(".back").click(function() {
+  parent.history.back();
+  return false;
+  });
+  });
