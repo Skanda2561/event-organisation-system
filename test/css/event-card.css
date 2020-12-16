@@ -129,7 +129,7 @@ section{
 @media(max-width:989px){
 li{
 margin: auto;
-font-size: 0.8rem;
+font-size: 0.9rem;
 font-weight: 100;
 }
 
@@ -211,3 +211,11 @@ table td,th{
 tr:nth-child(even){background-color: #e3e2e9b4}
 tr:nth-child(even).dark-theme{background-color: #898f94ec;}
 tr:hover {background-color: var(--shade3);}
+
+.quick-info > ul >li{
+margin: 1vh 1vh;
+}
+.hostcard >ul>li  {
+  font-size: 1.1em;
+  margin-left: 3vh;
+}
