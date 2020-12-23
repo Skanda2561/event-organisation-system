@@ -1,4 +1,8 @@
-document.getElementById("nav-username").innerHTML += (" " + localStorage.getItem("username"));
+var name=localStorage.getItem("username")
+if (name!="null") {
+document.getElementById("nav-username").innerHTML += (" " +name );
+}
+
 
 function logout() {
   location.replace("signin.html");

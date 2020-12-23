@@ -183,7 +183,6 @@
 
 @media (max-width:600px) {
   .cover {
-    background-size: contain;
     background-repeat: no-repeat;
     min-height: 30vh;
     max-height: 50vh;
