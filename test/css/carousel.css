@@ -32,11 +32,10 @@ html, body {
 }
 
 .carousel-indicators li {
-  width: 10px !important;
-  height: 10px !important;
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
-  padding: 2px;
-  margin: 18px;
+  margin: 0 8px;
 }
 
 .carousel-controller {
