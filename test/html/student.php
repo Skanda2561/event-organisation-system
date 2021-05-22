@@ -105,7 +105,43 @@ session_start();
 
           <section class="card-deck" id="card-deck">
             <ul>
-
+							<?php
+							if ( !empty($user_data) )
+							{
+								$id=$user_data['student_id'];
+								$qry1="select * from events where event_upcoming=1 and event_id in (select event_id from participants where student_id = '$id' )";
+								$result = $con->query($qry1);
+								if ($result->num_rows > 0) {
+									// output data of each row
+									while($row = $result->fetch_assoc()) {
+										?>
+										<li>
+											<figure>
+												<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+												<figcaption>
+													<h3> <?php echo $row['event_name']; ?> </h3>
+												</figcaption>
+											</figure>
+											<p><?php echo $row['event_desc']; ?></p>
+											<div class="quick-info">
+												<ul>
+													<li>Time: <?php echo $row['time']; ?> </li>
+													<li>Date: <?php echo $row['date']; ?> </li>
+													<li>Venue: <?php echo $row['event_venue']; ?> </li>
+												</ul>
+											</div>
+											<form class="" action="event-info.php" method="post">
+												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+												<input type="submit" name="submit" value="See more">
+											</form>
+										</li>
+										<?php
+									}
+									} else {
+									echo "You Don't Have Any Upcoming Events";
+									}
+							}
+							?>
 
               <li>
                 <figure>
@@ -277,7 +313,43 @@ session_start();
 
           <section class="card-deck" id="card-deck">
             <ul>
-
+							<?php
+							if ( !empty($user_data) )
+							{
+								$id=$user_data['student_id'];
+								$qry1="select * from events where event_upcoming=0 and event_id in (select event_id from participants where student_id = '$id' );";
+								$result = $con->query($qry1);
+								if ($result->num_rows > 0) {
+									// output data of each row
+									while($row = $result->fetch_assoc()) {
+										?>
+										<li>
+											<figure>
+												<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+												<figcaption>
+													<h3> <?php echo $row['event_name']; ?> </h3>
+												</figcaption>
+											</figure>
+											<p><?php echo $row['event_desc']; ?></p>
+											<div class="quick-info">
+												<ul>
+													<li>Time: <?php echo $row['time']; ?> </li>
+													<li>Date: <?php echo $row['date']; ?> </li>
+													<li>Venue: <?php echo $row['event_venue']; ?> </li>
+												</ul>
+											</div>
+											<form class="" action="event-info.php" method="post">
+												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+												<input type="submit" name="submit" value="See more">
+											</form>
+										</li>
+										<?php
+									}
+									} else {
+									echo "You Don't Have Any Upcoming Events";
+									}
+							}
+							?>
               <li>
                 <figure>
                   <img src="../images/blockchain.jfif" alt="Blockchain Technology">

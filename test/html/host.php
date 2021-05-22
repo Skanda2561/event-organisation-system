@@ -6,6 +6,54 @@ session_start();
 
 	$user_data = check_login($con);
 
+		if($_SERVER['REQUEST_METHOD'] == "POST")
+		{
+			//something was posted
+			$name = $_POST['event-name'];
+			$desc = $_POST['event-desc'];
+			$venue = $_POST['venue'];
+			$date = $_POST['date'];
+			$time = $_POST['time'];
+			$host = $user_data['host_id'];
+
+			//image
+			if (isset($_POST['submit']) && isset($_FILES['poster'])) {
+				$img_name = $_FILES['poster']['name'];
+				$img_size = $_FILES['poster']['size'];
+				$tmp_name = $_FILES['poster']['tmp_name'];
+				$error = $_FILES['poster']['error'];
+				if ($error === 0) {
+					if ($img_size > 125000) {
+						$em = "Sorry, your file is too large.";
+						header("Location: host.php?error=$em");
+				}else {
+					$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+					$img_ex_lc = strtolower($img_ex);
+					$allowed_exs = array("jpg", "jpeg", "png");
+					if (in_array($img_ex_lc, $allowed_exs)) {
+						$new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
+						$img_upload_path = '../images/uploads/'.$new_img_name;
+						move_uploaded_file($tmp_name, $img_upload_path);
+					}else {
+						$em = "You can't upload files of this type";
+								header("Location: host.php?error=$em");
+						}
+					}
+				}
+			}
+			if(!empty($name) && !empty($desc) && !empty($venue) && !empty($date) && !empty($time) && !empty($host) && !empty($img_upload_path))
+			{
+				  $query = "insert into eos.events ( event_name, event_desc, event_venue, date,time,hosted_by,event_img) values ('$name','$desc','$venue','$date','$time','$host','$img_upload_path')";
+					mysqli_query($con, $query);
+					header("Location: host.php");
+					die;
+			}
+			else {
+				echo "enter valid data";
+			}
+		}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,7 +125,9 @@ session_start();
   </div>
   <!--user name ,logout-->
   <nav id="user-data" class="navbar navbar-expand-sm sticky-top">
-    <i class="fas fa-users fa-2x"></i><span><?php echo $user_data['host_name']; ?></span>
+		<a href="host.php">
+			<i class="fas fa-users fa-2x"></i><span><?php echo $user_data['host_name']; ?></span>
+		</a>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <button id="logout" class="nav-link btn btn-outline-danger "><a href="logout.php">Logout</a></button>
@@ -107,6 +157,43 @@ session_start();
 
           <section class="card-deck" id="card-deck">
             <ul>
+							<?php
+							if ( !empty($user_data) )
+							{
+								$id=$user_data['host_id'];
+								$qry1="select * from events where hosted_by='$id' and event_upcoming=1";
+								$result = $con->query($qry1);
+								if ($result->num_rows > 0) {
+								  // output data of each row
+								  while($row = $result->fetch_assoc()) {
+										?>
+										<li>
+											<figure>
+												<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+												<figcaption>
+													<h3> <?php echo $row['event_name']; ?> </h3>
+												</figcaption>
+											</figure>
+											<p><?php echo $row['event_desc']; ?></p>
+											<div class="quick-info">
+												<ul>
+													<li>Time: <?php echo $row['time']; ?> </li>
+													<li>Date: <?php echo $row['date']; ?> </li>
+													<li>Venue: <?php echo $row['event_venue']; ?> </li>
+												</ul>
+											</div>
+											<form class="" action="event-info.php" method="post">
+												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+												<input type="submit" class="btn btn-small btn-outline-dark " name="submit" value="See more">
+											</form>
+										</li>
+										<?php
+									}
+									} else {
+									echo "You Don't Have Any Upcoming Events";
+									}
+							}
+							?>
               <li>
                 <figure>
                   <img src="../images/dance.jpg" alt="Dance Competition">
@@ -281,7 +368,43 @@ session_start();
 
           <section class="card-deck" id="card-deck">
             <ul>
-
+							<?php
+							if ( !empty($user_data) )
+							{
+								$id=$user_data['host_id'];
+								$qry1="select * from events where hosted_by='$id' and event_upcoming=0";
+								$result = $con->query($qry1);
+								if ($result->num_rows > 0) {
+									// output data of each row
+									while($row = $result->fetch_assoc()) {
+										?>
+										<li>
+											<figure>
+												<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+												<figcaption>
+													<h3> <?php echo $row['event_name']; ?> </h3>
+												</figcaption>
+											</figure>
+											<p><?php echo $row['event_desc']; ?></p>
+											<div class="quick-info">
+												<ul>
+													<li>Time: <?php echo $row['time']; ?> </li>
+													<li>Date: <?php echo $row['date']; ?> </li>
+													<li>Venue: <?php echo $row['event_venue']; ?> </li>
+												</ul>
+											</div>
+											<form class="" action="event-info.php" method="post">
+												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+												<input type="submit" name="submit" value="See more">
+											</form>
+										</li>
+										<?php
+									}
+									} else {
+									echo "You Don't Have Any Upcoming Events";
+									}
+							}
+							?>
               <li>
                 <figure>
                   <img src="../images/fashion.jpg" alt="Fashion Show">
@@ -526,23 +649,21 @@ session_start();
 
       </div>
       <div id="create" class="container tab-pane fade"><br>
-        <form class="" method="post">
+        <form class="" method="post" enctype="multipart/form-data">
           <h2>Create a New Event</h2><br>
           <label for="event-name">Event name</label><br>
           <input type="text" required name="event-name" id="event-name"><br>
           <label for="event-desc">Event description</label><br>
           <input type="text" required name="event-desc" id="event-desc" maxlength="70"><br>
-          <label for="date-time">Date and time</label><br>
-          <input type="datetime-local" required name="date-time" id="date-time"> <br>
+          <label for="date">Date</label><br>
+          <input type="date" required name="date" id="date"> <br>
+          <label for="time">Time</label><br>
+					<input type="time" required name="time" id="time"> <br>
           <label for="venue">Event venue</label><br>
           <input type="text" required name="venue" id="venue" maxlength="50"><br>
-          <label for="mailid">Host e-mail (optional) </label><br>
-          <input type="email" name="mailid"><br>
-          <label for="website">Host/registration website </label><br>
-          <input type="url" name="website"><br>
           <label for="poster">Event poster (or) invitation</label><br>
-          <input type="file" name="poster"><br>
-          <input type="submit" value="Create" onclick="message()"><br>
+          <input type="file"required name="poster"><br>
+          <input type="submit" name="submit" value="Create" ><br>
         </form>
 
       </div>
@@ -579,25 +700,6 @@ session_start();
     </div>
   </footer>
   <script src="../javascript/theme.js"></script>
-  <script >
-  function message() {
-    var x = 0;
-    var name = document.getElementById('event-name').value;
-    var desc = document.getElementById('event-desc').value;
-    var datetime = document.getElementById('date-time').value;
-    var venue = document.getElementById('venue').value;
-    if (name == "" || desc == "" || datetime == "" || venue == "") {
-      alert("Fill all required data!!");
-      x = -1;
-    }
-
-    if (x == 0) {
-      alert("Thank you for trusting us. Your responses are recorded, we will contact you for confirmation and reflect the changes.")
-    }
-
-  }
-  </script>
-
 
 </body>
 

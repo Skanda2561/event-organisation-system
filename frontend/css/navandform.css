@@ -1,0 +1,115 @@
+body{
+  --shade1:#F9F6F7;
+  --shade2:#E3F6F5;
+  --shade3:#BAE8E8;
+  --shade4:#272343 ;
+  --text:#000;
+}
+.dark-theme{
+  --shade1:#343A40;
+  --shade2:#282423;
+  --shade3:#211E1C;
+  --shade4:#191715;
+  --text:#f9f6f7;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+  font-family: 'Poppins', sans-serif !important;
+}
+.container{
+  padding:20px 5px;
+}
+/*user nav*/
+#logout{
+  height:40px;
+  border-radius: 20px;
+}
+#user-data{
+  background: var(--shade2) !important;
+}
+/*nav tabs*/
+.nav-pills  li  a.active {
+  background-color: var(--shade4) !important;
+  color: #fff !important;
+  border-radius: 9px 9px 0 0;
+}
+
+.nav-pills  li  a:hover {
+  background-color: var(--shade3) !important;
+}
+.tab-content {
+  border-top-style: solid ;
+  border-width: 1px;
+  border-top-color: var(--shade4);
+  margin: 0;
+}
+
+
+
+/*create event form*/
+#create{
+  position: relative;
+  padding: 30px;
+  margin: 0;
+  left: 25px;
+  transition: 0.6s;
+}
+#create form h2{
+  font-size: 24px !important;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 100%;
+  margin-bottom: 15px;
+  transition: 0.6s;
+}
+#create form input {
+  padding: 4px;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  height: 50px;
+  background: var(--shade2);
+  color: #f58d8d;
+  margin-bottom: 8px ;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 400px;
+  min-width: 320px;
+  transition: 0.6s;
+}
+#create form input[type="submit"]{
+  min-width: 100px;
+  transition: 0.5s;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.6s;
+
+}
+#create form input[type="submit"]:hover{
+  background:var(--shade4) ;
+  color: #FFF;
+  opacity: 0.75;
+}
+
+
+/*mediaquery for dark mode*/
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --shade1:#343A40;
+    --shade2:#282423;
+    --shade3:#211E1C;
+    --shade4:#191715;
+    --text:#f9f6f7;
+  }
+  body.light-theme {
+    --shade1:#F9F6F7;
+    --shade2:#E3F6F5;
+    --shade3:#BAE8E8;
+    --shade4:#272343 ;
+    --text:#000;
+  }
+}

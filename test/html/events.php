@@ -78,8 +78,25 @@ session_start();
 
   </div>
   <!--user name ,logout-->
+	<?php
+	if (isset($user_data['host_id'])) {
+		$type="host";
+	}
+	elseif (isset($user_data['student_id'])) {
+		$type="student";
+	}
+	 ?>
   <nav id="user-data" class="navbar navbar-expand-sm sticky-top">
-    <a id="nav-username" class="navbar-brand" href=""><?php echo "enjoying??"; ?></a>
+    <a id="nav-username" class="navbar-brand" href="<?php echo $type; ?>.php">
+			<?php
+			if ($type=="host") {
+				echo $user_data['host_name'];
+			} elseif($type=="student") {
+				echo $user_data['student_name'];
+			}
+
+			?>
+		</a>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <button id="logout" class="nav-link btn btn-outline-danger"><a href="logout.php">Logout</a></button>
@@ -162,6 +179,42 @@ session_start();
           <main class="wrapper">
             <section class="card-deck" id="card-deck">
               <ul>
+								<?php
+								if ( !empty($user_data) )
+								{
+									$qry1="select * from events where event_upcoming=1";
+									$result = $con->query($qry1);
+									if ($result->num_rows > 0) {
+										// output data of each row
+										while($row = $result->fetch_assoc()) {
+											?>
+											<li>
+												<figure>
+													<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+													<figcaption>
+														<h3> <?php echo $row['event_name']; ?> </h3>
+													</figcaption>
+												</figure>
+												<p><?php echo $row['event_desc']; ?></p>
+												<div class="quick-info">
+													<ul>
+														<li>Time: <?php echo $row['time']; ?> </li>
+														<li>Date: <?php echo $row['date']; ?> </li>
+														<li>Venue: <?php echo $row['event_venue']; ?> </li>
+													</ul>
+												</div>
+												<form class="" action="event-info.php" method="post">
+													<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+													<input type="submit" name="submit" value="See more">
+												</form>
+											</li>
+											<?php
+										}
+										} else {
+										echo "Oops!!! We Don't Have Any Upcoming Events";
+										}
+								}
+								?>
                 <li>
                   <figure>
                     <img src="../images/quiz.png" alt="Quiz Time">
@@ -659,7 +712,42 @@ session_start();
           <main class="wrapper">
             <section class="card-deck" id="card-deck">
               <ul>
-
+								<?php
+								if ( !empty($user_data) )
+								{
+									$qry1="select * from events where event_upcoming=0";
+									$result = $con->query($qry1);
+									if ($result->num_rows > 0) {
+										// output data of each row
+										while($row = $result->fetch_assoc()) {
+											?>
+											<li>
+												<figure>
+													<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+													<figcaption>
+														<h3> <?php echo $row['event_name']; ?> </h3>
+													</figcaption>
+												</figure>
+												<p><?php echo $row['event_desc']; ?></p>
+												<div class="quick-info">
+													<ul>
+														<li>Time: <?php echo $row['time']; ?> </li>
+														<li>Date: <?php echo $row['date']; ?> </li>
+														<li>Venue: <?php echo $row['event_venue']; ?> </li>
+													</ul>
+												</div>
+												<form class="" action="event-info.php" method="post">
+													<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+													<input type="submit" name="submit" value="See more">
+												</form>
+											</li>
+											<?php
+										}
+										} else {
+										echo "You Don't Have Any Previous Events";
+										}
+								}
+								?>
                 <li>
                   <figure>
                     <img src="../images/blockchain.jfif" alt="Blockchain Technology">
