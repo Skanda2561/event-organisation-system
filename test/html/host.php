@@ -23,9 +23,9 @@ session_start();
 				$tmp_name = $_FILES['poster']['tmp_name'];
 				$error = $_FILES['poster']['error'];
 				if ($error === 0) {
-					if ($img_size > 125000) {
+					if ($img_size > 2500000) {
 						$em = "Sorry, your file is too large.";
-						header("Location: host.php?error=$em");
+						echo "<script>alert('$em')</script>";
 				}else {
 					$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
 					$img_ex_lc = strtolower($img_ex);
@@ -36,7 +36,7 @@ session_start();
 						move_uploaded_file($tmp_name, $img_upload_path);
 					}else {
 						$em = "You can't upload files of this type";
-								header("Location: host.php?error=$em");
+								echo "<script>alert('$em')</script>";
 						}
 					}
 				}
