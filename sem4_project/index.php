@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+	include("html/connection.php");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -130,11 +135,47 @@
   </div>
 
   <!-- Main events cards-->
-
   <main class="wrapper ">
 
     <section class="card-deck main-event-wrapper" id="card-deck">
-      <h2 style="padding-bottom:30px;">Trending & Main Upcoming Events</h2>
+      <h2 style="padding-bottom:30px;display:block;" >Trending & Main Upcoming Events</h2><br>
+      <ul>
+        <?php
+          $qry1="SELECt * FROM events WHERE event_id IN (SELECT event_id FROM participants GROUP BY event_id ORDER BY COUNT(*) ) AND event_upcoming=1 LIMIT 3;";
+          $result = $con->query($qry1);
+          if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+              ?>
+              <li>
+                <figure>
+                  <img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+                  <figcaption>
+                    <h3> <?php echo $row['event_name']; ?> </h3>
+                  </figcaption>
+                </figure>
+                <p><?php echo $row['event_desc']; ?></p>
+                <div class="quick-info">
+                  <ul>
+                    <li>Time: <?php echo $row['time']; ?> </li>
+                    <li>Date: <?php echo $row['date']; ?> </li>
+                    <li>Venue: <?php echo $row['event_venue']; ?> </li>
+                  </ul>
+                </div>
+                <form class="" action="event-info.php" method="post">
+                  <input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
+                  <input type="submit" name="submit" value="See more">
+                </form>
+              </li>
+              <?php
+            }
+            } else {
+              ?><br><?php
+            echo "Oops!!! We Don't Have Any Trending Events";
+            }
+        ?>
+
+      </ul>
       <ul>
 
         <li>

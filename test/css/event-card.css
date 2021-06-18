@@ -28,7 +28,7 @@ section {
   justify-content: center;
 }
 
-#card-deck button {
+#card-deck button{
   background: rgba(125, 234, 245, 0.5);
   color: var(--text);
   border-radius: 20px;
@@ -46,7 +46,11 @@ section {
   color: #f9f6f7;
   opacity: .8;
 }
-
+#regbtn:hover{
+  background-color: var(--shade4);
+  color: #f9f6f7;
+  opacity: .8;
+}
 /* card styles */
 #card-deck {
   padding: 3px;
@@ -216,6 +220,7 @@ table td, th {
   background-color: var(--text);
   color: #272343;
 }
+
 
 .fade {
   /* Full height */

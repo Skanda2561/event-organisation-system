@@ -203,12 +203,11 @@ session_start();
 														<li>Venue: <?php echo $row['event_venue']; ?> </li>
 													</ul>
 												</div>
-												<form class="" action="event-info.php" method="post">
-													<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
-													<input type="submit" name="submit" value="See more">
-												</form>
+												<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
 											</li>
+
 											<?php
+											display_modal($row);
 										}
 										} else {
 										echo "Oops!!! We Don't Have Any Upcoming Events";
@@ -224,7 +223,7 @@ session_start();
           <h4>Previous events</h4>
           <main class="wrapper">
             <section class="card-deck" id="card-deck">
-              <ul>
+							<ul>
 								<?php
 								if ( !empty($user_data) )
 								{
@@ -249,18 +248,17 @@ session_start();
 														<li>Venue: <?php echo $row['event_venue']; ?> </li>
 													</ul>
 												</div>
-												<form class="" action="event-info.php" method="post">
-													<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
-													<input type="submit" name="submit" value="See more">
-												</form>
+												<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
 											</li>
 											<?php
+											display_modal($row);
 										}
 										} else {
-										echo "You Don't Have Any Previous Events";
+										echo "Oops!!! We Don't Have Any Upcoming Events";
 										}
 								}
 								?>
+
               </ul>
             </section>
           </main>

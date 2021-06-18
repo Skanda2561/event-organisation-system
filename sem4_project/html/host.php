@@ -35,8 +35,8 @@ session_start();
 						$img_upload_path = '../images/uploads/'.$new_img_name;
 						move_uploaded_file($tmp_name, $img_upload_path);
 					}else {
-						$em = "You can't upload files of this type";
-								echo "<script>alert('$em')</script>";
+						$em = "You cannot upload files of this type";
+								echo "<script>alert('You cannot upload files of this type')</script>";
 						}
 					}
 				}
@@ -75,10 +75,7 @@ session_start();
   <link rel="stylesheet" href="../css/navandform.css">
 
   <!-- Bootstrap Scripts -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!--FAVICON-->
   <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
@@ -164,8 +161,8 @@ session_start();
 								$qry1="select * from events where hosted_by='$id' and event_upcoming=1";
 								$result = $con->query($qry1);
 								if ($result->num_rows > 0) {
-								  // output data of each row
-								  while($row = $result->fetch_assoc()) {
+									// output data of each row
+									while($row = $result->fetch_assoc()) {
 										?>
 										<li>
 											<figure>
@@ -182,181 +179,17 @@ session_start();
 													<li>Venue: <?php echo $row['event_venue']; ?> </li>
 												</ul>
 											</div>
-											<form class="" action="event-info.php" method="post">
-												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
-												<input type="submit" class="btn btn-small btn-outline-dark " name="submit" value="See more">
-											</form>
+											<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
 										</li>
+
 										<?php
+										display_modal($row);
 									}
 									} else {
-									echo "You Don't Have Any Upcoming Events";
+									echo "Oops!!! You Don't Have Any Upcoming Events";
 									}
 							}
 							?>
-              <li>
-                <figure>
-                  <img src="../images/dance.jpg" alt="Dance Competition">
-                  <figcaption>
-                    <h3>Dance Competition</h3>
-                  </figcaption>
-                </figure>
-                <p>Dance, the movement of the body in a rhythmic way usually to music and within a given space, for the purpose of expressing an idea..</p>
-                <div class="quick-info">
-                  <ul>
-                    <li>Time: 11:30 am </li>
-                    <li>Date: 05/12/2020 </li>
-                    <li>Venue: Indoor Stadium </li>
-                  </ul>
-                </div>
-                <button class="btn btn-small btn-outline-dark " type="button" onclick=" window.open('https://forms.gle/iRKGVmDS5HwXChTm8','_blank')"> Register </button>
-                <button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#DanceCompetition">See more</button>
-              </li>
-              <!-- Modal -->
-              <div class="modal fade" id="DanceCompetition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-image:url('../images/dancebg(1).jpg');background-repeat:norepeat; background-size :100%">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"><b>Dance Competition</b></h5>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-2">
-                          <img src="../images/dance.jpg" alt="DanceCompetition">
-                        </div>
-                        <div class="col-2">
-                          <p>Dance, the movement of the body in a rhythmic way usually to music and within a given space, for the purpose of expressing an idea..</p>
-                        </div>
-                      </div>
-                      <table>
-                        <tr>
-                          <td colspan="2" style="text-align: center;"> <B>Registered Students</B></td>
-                        </tr>
-                        <tr>
-                          <th>Name</th>
-                          <th>USN</th>
-                        </tr>
-                        <tr>
-                          <td>Deep Prasad Jani</td>
-                          <td> 1BM19CS280 </td>
-                        <tr>
-                          <td>Jyoti Bhat </td>
-                          <td> 1BM19CS354</td>
-                        </tr>
-                        <tr>
-                          <td> Naina Monin Pathak </td>
-                          <td> 1BM19CS328</td>
-                        </tr>
-                        <tr>
-                          <td>Shekhar Rege </td>
-                          <td>1BM19CS434 </td>
-                        </tr>
-                        </tr>
-                      </table>
-                      <div class="row">
-                        <div class="col-3">
-                          <b>Time:</b> <br> 11:30 am
-                        </div>
-                        <div class="col-3">
-                          <b>Date:</b> <br>05/12/2020
-                        </div>
-                        <div class="col-3">
-                          <b>Venue:</b> <br>Indoor Stadium
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="modal-footer">
-                      <button class="btn btn-small btn-outline-dark " type="button" onclick=" window.open('https://forms.gle/iRKGVmDS5HwXChTm8','_blank')"> Register </button>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <li>
-                <figure>
-                  <img src="../images/quiz.png" alt="Quiz Time">
-                  <figcaption>
-                    <h3>Quiz Time</h3>
-                  </figcaption>
-                </figure>
-                <p>Test your smarts with these fun quizzes about frogs, space, holidays, and more</p>
-                <div class="quick-info">
-                  <ul>
-                    <li>Time: 2:00 pm </li>
-                    <li>Date: 10/11/2020 </li>
-                    <li>Venue: Auditorium-1 </li>
-                  </ul>
-                </div>
-                <button class="btn btn-small btn-outline-dark " type="button" onclick=" window.open('https://forms.gle/iRKGVmDS5HwXChTm8','_blank')"> Register </button>
-                <button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#QuizTime">See more</button>
-              </li>
-              <!-- Modal -->
-              <div class="modal fade" id="QuizTime" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-image:url('../images/mindset-743166_1280.jpg'); ">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"><b>Quiz Time</b></h5>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-2">
-                          <img src="../images/quiz.png" alt="Quiz">
-                        </div>
-                        <div class="col-2">
-                          <p>
-                            We've got all the quizzes you love to binge! Come on in and hunker down for the long haul</p>
-                        </div>
-                      </div>
-                      <table>
-                        <tr>
-                          <td colspan="2" style="text-align: center;"> <B>Registered Students</B></td>
-                        </tr>
-                        <tr>
-                          <th>Name</th>
-                          <th>USN</th>
-                        </tr>
-                        <tr>
-                          <td>Dharma Kapoor </td>
-                          <td> 1BM19IS290 </td>
-                        <tr>
-                          <td>Riya Vala </td>
-                          <td> 1BM19IS344</td>
-                        </tr>
-                        <tr>
-                          <td> Dipti Pirzada Balan </td>
-                          <td> 1BM19ME338</td>
-                        </tr>
-                        <tr>
-                          <td>Padama Jawahar Mandal </td>
-                          <td>1BM19CS434 </td>
-                        </tr>
-                        </tr>
-                      </table>
-                      <div class="row">
-                        <div class="col-3">
-                          <b>Time:</b> <br> 2:00 pm
-                        </div>
-                        <div class="col-3">
-                          <b>Date:</b> <br>10/11/2020
-                        </div>
-                        <div class="col-3">
-                          <b>Venue:</b> <br>Auditorium-1
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-small btn-outline-dark " type="button" onclick=" window.open('https://forms.gle/iRKGVmDS5HwXChTm8','_blank')"> Register </button>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
             </ul>
           </section>
         </main>
@@ -393,256 +226,17 @@ session_start();
 													<li>Venue: <?php echo $row['event_venue']; ?> </li>
 												</ul>
 											</div>
-											<form class="" action="event-info.php" method="post">
-												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
-												<input type="submit" name="submit" value="See more">
-											</form>
+											<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
 										</li>
+
 										<?php
+										display_modal($row);
 									}
 									} else {
-									echo "You Don't Have Any Upcoming Events";
+									echo "Oops!!! We Don't Have Any Upcoming Events";
 									}
 							}
 							?>
-              <li>
-                <figure>
-                  <img src="../images/fashion.jpg" alt="Fashion Show">
-                  <figcaption>
-                    <h3>Fashion Show</h3>
-                  </figcaption>
-                </figure>
-                <p>Fashion Technology showcased their wondrous creativity on the dress materials as they presented their creations...</p>
-                <div class="quick-info">
-                  <ul>
-                    <li>Time: 3:15 pm </li>
-                    <li>Date: 15/5/2020 </li>
-                    <li>Venue:Indoor stadium </li>
-                  </ul>
-                </div>
-                <button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#FashionShow">See more</button>
-              </li>
-              <!-- Modal -->
-              <div class="modal fade" id="FashionShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-image:url('../images/fashionbg.jpg');">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"><b>Fashion Show</b></h5>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-2">
-                          <img src="../images/fashion.jpg" alt="FashionShow">
-                        </div>
-                        <div class="col-2">
-                          <p>
-                            We've got all the quizzes you love to binge! Come on in and hunker down for the long haul</p>
-                        </div>
-                      </div>
-                      <table>
-                        <tr>
-                          <td colspan="2" style="text-align: center;"> <B>Registered Students</B></td>
-                        </tr>
-                        <tr>
-                          <th>Name</th>
-                          <th>USN</th>
-                        </tr>
-                        <tr>
-                          <td>Dharma Kapoor </td>
-                          <td> 1BM19CS290 </td>
-                        <tr>
-                          <td>Parth Oza </td>
-                          <td> 1BM19EE344</td>
-                        </tr>
-                        <tr>
-                          <td> Swarna Ramaswamy </td>
-                          <td> 1BM19EC338</td>
-                        </tr>
-                        <tr>
-                          <td>Shekhar Rege </td>
-                          <td>1BM19ME434 </td>
-                        </tr>
-                        </tr>
-                      </table>
-                      <div class="row">
-                        <div class="col-3">
-                          <b>Time:</b> <br> 3:15 pm
-                        </div>
-                        <div class="col-3">
-                          <b>Date:</b> <br>15/5/2020
-                        </div>
-                        <div class="col-3">
-                          <b>Venue:</b> <br>Indoor stadium
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <li>
-                <figure>
-                  <img src="../images/Photo-contestbg.jpg" alt="">
-                  <figcaption>
-                    <h3>Photography Competition</h3>
-                  </figcaption>
-                </figure>
-                <p>Show your creatives and models that results in a predetermined visual objective being obtained...</p>
-                <div class="quick-info">
-                  <ul>
-                    <li>Time: 10:00 am </li>
-                    <li>Date: 20/3/2020 </li>
-                    <li>Venue: Rock Garden </li>
-                  </ul>
-                </div>
-                <button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#PhotographyCompetition">See more</button>
-              </li>
-              <!-- Modal -->
-              <div class="modal fade" id="PhotographyCompetition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-image:url('../images/photo.jpg');">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"><b>Photography Competition</b></h5>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-2">
-                          <img src="../images/Photo-contestbg.jpg" alt="Photography Competition">
-                        </div>
-                        <div class="col-2">
-                          <p>
-                            Show your creatives and models that results in a predetermined visual objective being obtained...</p>
-                        </div>
-                      </div>
-                      <table>
-                        <tr>
-                          <td colspan="2" style="text-align: center;"> <B>Registered Students</B></td>
-                        </tr>
-                        <tr>
-                          <th>Name</th>
-                          <th>USN</th>
-                        </tr>
-                        <tr>
-                          <td>Devina Ghosh </td>
-                          <td> 1BM19CS290 </td>
-                        <tr>
-                          <td>Parth Oza </td>
-                          <td> 1BM19EE344</td>
-                        </tr>
-                        <tr>
-                          <td> Nirmal Gill </td>
-                          <td> 1BM19EC338</td>
-                        </tr>
-                        <tr>
-                          <td>Shivani Jaggi </td>
-                          <td>1BM19ME434 </td>
-                        </tr>
-                        </tr>
-                      </table>
-                      <div class="row">
-                        <div class="col-3">
-                          <b>Time:</b> <br> 10:00 am
-                        </div>
-                        <div class="col-3">
-                          <b>Date:</b> <br>20/3/2020
-                        </div>
-                        <div class="col-3">
-                          <b>Venue:</b> <br> Rock Garden
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <li>
-                <figure>
-                  <img src="../images/music.jpg" alt="Music Competition">
-                  <figcaption>
-                    <h3>Music Competition</h3>
-                  </figcaption>
-                </figure>
-                <p>Music competitions are a regular part of life for many students who plan to go to music school and seek a career in music..</p>
-                <div class="quick-info">
-                  <ul>
-                    <li>Time: 1:15 pm </li>
-                    <li>Date: 25/2/2020 </li>
-                    <li>Venue: Auditorium </li>
-                  </ul>
-                </div>
-                <button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#MusicCompetition">See more</button>
-              </li>
-              <!-- Modal -->
-              <div class="modal fade" id="MusicCompetition" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-image:url('../images/Musicbg1.jpg');">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"><b>Music Competition</b></h5>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-2">
-                          <img src="../images/music.jpg" alt="Music Competition">
-                        </div>
-                        <div class="col-2">
-                          <p>
-                            Music competitions are a regular part of life for many students who plan to go to music school and seek a career in music..</p>
-                        </div>
-                      </div>
-                      <table>
-                        <tr>
-                          <td colspan="2" style="text-align: center;"> <B>Registered Students</B></td>
-                        </tr>
-                        <tr>
-                          <th>Name</th>
-                          <th>USN</th>
-                        </tr>
-                        <tr>
-                          <td>Parth Sami </td>
-                          <td> 1BM19CS290 </td>
-                        <tr>
-                          <td>Parth Oza </td>
-                          <td> 1BM19EE344</td>
-                        </tr>
-                        <tr>
-                          <td> Apurva Deshpande</td>
-                          <td> 1BM19EC338</td>
-                        </tr>
-                        <tr>
-                          <td>Amitabh Ahluwalia </td>
-                          <td>1BM19ME434 </td>
-                        </tr>
-                        </tr>
-                      </table>
-                      <div class="row">
-                        <div class="col-3">
-                          <b>Time:</b> <br> 1:15 pm
-                        </div>
-                        <div class="col-3">
-                          <b>Date:</b> <br> 25/2/2020
-                        </div>
-                        <div class="col-3">
-                          <b>Venue:</b> <br> Auditorium
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </ul>
           </section>
         </main>
@@ -700,6 +294,9 @@ session_start();
     </div>
   </footer>
   <script src="../javascript/theme.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 

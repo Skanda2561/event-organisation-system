@@ -26,10 +26,7 @@ session_start();
   <link rel="stylesheet" href="../css/navandform.css">
 
   <!-- Bootstrap Scripts -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!--FAVICON-->
   <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
@@ -130,19 +127,17 @@ session_start();
 													<li>Venue: <?php echo $row['event_venue']; ?> </li>
 												</ul>
 											</div>
-											<form class="" action="event-info.php" method="post">
-												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
-												<input type="submit" name="submit" value="See more">
-											</form>
+											<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
 										</li>
+
 										<?php
+										display_modal($row);
 									}
 									} else {
-									echo "You Don't Have Any Upcoming Events";
+									echo "Oops!!! We Don't Have Any Upcoming Events";
 									}
 							}
 							?>
-
             </ul>
           </section>
         </main>
@@ -154,44 +149,43 @@ session_start();
 
           <section class="card-deck" id="card-deck">
             <ul>
-							<?php
-							if ( !empty($user_data) )
-							{
-								$id=$user_data['student_id'];
-								$qry1="select * from events where event_upcoming=0 and event_id in (select event_id from participants where student_id = '$id' );";
-								$result = $con->query($qry1);
-								if ($result->num_rows > 0) {
-									// output data of each row
-									while($row = $result->fetch_assoc()) {
-										?>
-										<li>
-											<figure>
-												<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
-												<figcaption>
-													<h3> <?php echo $row['event_name']; ?> </h3>
-												</figcaption>
-											</figure>
-											<p><?php echo $row['event_desc']; ?></p>
-											<div class="quick-info">
-												<ul>
-													<li>Time: <?php echo $row['time']; ?> </li>
-													<li>Date: <?php echo $row['date']; ?> </li>
-													<li>Venue: <?php echo $row['event_venue']; ?> </li>
-												</ul>
-											</div>
-											<form class="" action="event-info.php" method="post">
-												<input type="hidden" name="event_id" value="<?php echo $row['event_id']; ?>">
-												<input type="submit" name="submit" value="See more">
-											</form>
-										</li>
-										<?php
-									}
-									} else {
-									echo "You  Have Not Participated Any Events";
-									}
-							}
-							?>
-              </div>
+
+								<?php
+								if ( !empty($user_data) )
+								{
+									$id=$user_data['student_id'];
+									$qry1="select * from events where event_upcoming=0 and event_id in (select event_id from participants where student_id = '$id' )";
+									$result = $con->query($qry1);
+									if ($result->num_rows > 0) {
+										// output data of each row
+										while($row = $result->fetch_assoc()) {
+											?>
+											<li>
+												<figure>
+													<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+													<figcaption>
+														<h3> <?php echo $row['event_name']; ?> </h3>
+													</figcaption>
+												</figure>
+												<p><?php echo $row['event_desc']; ?></p>
+												<div class="quick-info">
+													<ul>
+														<li>Time: <?php echo $row['time']; ?> </li>
+														<li>Date: <?php echo $row['date']; ?> </li>
+														<li>Venue: <?php echo $row['event_venue']; ?> </li>
+													</ul>
+												</div>
+												<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
+											</li>
+
+											<?php
+											display_modal($row);
+										}
+										} else {
+										echo "You have not participated in events";
+										}
+								}
+								?>
             </ul>
           </section>
         </main>
@@ -230,6 +224,9 @@ session_start();
     </div>
   </footer>
   <script src="../javascript/theme.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 

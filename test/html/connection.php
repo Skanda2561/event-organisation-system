@@ -16,3 +16,4 @@ $query="update events set event_upcoming =0 where events.date<= SYSDATE()";
 mysqli_query($con, $query);
 $query="update events set event_upcoming =1 where events.date> SYSDATE()";
 mysqli_query($con, $query);
+?>
