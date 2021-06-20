@@ -61,32 +61,12 @@ session_start();
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Event-plazA</title>
-  <!-- Font Awesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
-  <!--Google Fonts-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/event-card.css">
   <link rel="stylesheet" href="../css/navandform.css">
-
-	<!-- Bootstrap Scripts -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"> </script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"> </script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"> </script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!--FAVICON-->
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon//favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon//favicon-16x16.png">
-
+	<?php add_head(); ?>
 </head>
 
 <body id="host">
@@ -115,16 +95,6 @@ session_start();
     </div>
   </nav>
 
-
-  <div class="helper">
-    <div class="icon backtotop" title="Back To Top">
-      <a href="#top"><i class="fas fa-arrow-circle-up fa-2x"></i></a>
-    </div><br>
-    <div class="icon theme " title="Change Theme">
-      <button class="btn-toggle"> <i class="fas fa-adjust fa-2x"> </i></button>
-    </div>
-
-  </div>
   <!--user name ,logout-->
   <nav id="user-data" class="navbar navbar-expand-sm sticky-top">
 		<a href="host.php">
@@ -168,26 +138,7 @@ session_start();
 								if ($result->num_rows > 0) {
 									// output data of each row
 									while($row = $result->fetch_assoc()) {
-										?>
-										<li>
-											<figure>
-												<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
-												<figcaption>
-													<h3> <?php echo $row['event_name']; ?> </h3>
-												</figcaption>
-											</figure>
-											<p><?php echo $row['event_desc']; ?></p>
-											<div class="quick-info">
-												<ul>
-													<li>Time: <?php echo $row['time']; ?> </li>
-													<li>Date: <?php echo $row['date']; ?> </li>
-													<li>Venue: <?php echo $row['event_venue']; ?> </li>
-												</ul>
-											</div>
-											<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
-										</li>
-
-										<?php
+										display_row($row);
 										display_modal($row);
 									}
 									} else {
@@ -215,26 +166,7 @@ session_start();
 								if ($result->num_rows > 0) {
 									// output data of each row
 									while($row = $result->fetch_assoc()) {
-										?>
-										<li>
-											<figure>
-												<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
-												<figcaption>
-													<h3> <?php echo $row['event_name']; ?> </h3>
-												</figcaption>
-											</figure>
-											<p><?php echo $row['event_desc']; ?></p>
-											<div class="quick-info">
-												<ul>
-													<li>Time: <?php echo $row['time']; ?> </li>
-													<li>Date: <?php echo $row['date']; ?> </li>
-													<li>Venue: <?php echo $row['event_venue']; ?> </li>
-												</ul>
-											</div>
-											<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
-										</li>
-
-										<?php
+										display_row($row);
 										display_modal($row);
 									}
 									} else {
@@ -269,35 +201,11 @@ session_start();
     </div>
   </div>
 
-
-  <!-- Footer -->
-
-  <footer id="footer">
-    <div class="copy-rights">
-      <div class="foot names">
-        This website was created by<br>
-        S K Balaji : 1BM19CS134 S Skanda : 1BM19CS137<br>
-        Sai Praveen : 1BM19CS138 Saquib : 1BM19CS144 <br>
-        for the project work of third semester.
-      </div>
-      <div class="foot desc">
-        The aim of the website is to help colleges,<br>
-        student clubs, NGO ... to put up their events <br>
-        or activites online. Also, to help students <br>
-        participate in these.
-      </div>
-    </div>
-    <div class="container-fluid abtus">
-      <i class="fab fa-facebook-f fa-lg" style="color: #00acee ;"></i>
-      <i class="fab fa-twitter fa-lg" style="color: #0764b9 ;"></i>
-      <i class="fab fa-instagram fa-lg" style="color:#833AB4 ;"></i>
-      <i class="fas fa-envelope fa-lg " style="color:#e74646 ;"></i>
-      <br>
-      <button type="button" class="btn btn-outline-secondary  footbtn">
-        <a class="know-more" href="aboutus.php">Know more <i class="fa fa-chevron-right"></i></a>
-      </button>
-    </div>
-  </footer>
+	<?php helper(); ?>
+	<!-- Footer -->
+	<footer id="footer">
+		<?php footer(); ?>
+	</footer>
   <script src="../javascript/theme.js"></script>
 
 </body>

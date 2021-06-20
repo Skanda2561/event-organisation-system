@@ -1,8 +1,8 @@
 body {
-  --shade1: #F9F6F7;
-  --shade2: #E3F6F5;
-  --shade3: #BAE8E8;
-  --shade4: #272343;
+  --shade1: #eddfef;
+  --shade2: #d5cfe1;
+  --shade3: #b7b6c1;
+  --shade4: #464655;
   --text: #000;
 }
 
@@ -24,14 +24,13 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 body {
   padding: 0;
   margin: 0;
   border: 0;
-  background-color: var(--shade1) !important;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 16px;
@@ -40,7 +39,7 @@ body {
 
 /* navbar section*/
 .navbar {
-  background-color: var(--shade3) !important;
+  background-color: var(--shade3) ;
   opacity: 0.85;
 }
 
@@ -150,10 +149,10 @@ body {
   }
 
   body.light-theme {
-    --shade1: #F9F6F7;
-    --shade2: #E3F6F5;
-    --shade3: #BAE8E8;
-    --shade4: #272343;
+    --shade1: #eddfef;
+    --shade2: #d5cfe1;
+    --shade3: #b7b6c1;
+    --shade4: #464655;
     --text: #000;
   }
 }

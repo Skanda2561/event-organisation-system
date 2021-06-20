@@ -1,8 +1,8 @@
 body {
-  --shade1: #F9F6F7;
-  --shade2: #E3F6F5;
-  --shade3: #BAE8E8;
-  --shade4: #272343;
+    --shade1: #eddfef;
+    --shade2: #d5cfe1;
+    --shade3: #b7b6c1;
+    --shade4: #464655;
   --text: #000;
 }
 
@@ -20,22 +20,24 @@ body {
   font-family: 'Poppins', sans-serif !important;
 }
 
+
 /* events section */
 section {
   padding: 10px, 5px;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
   display: flex;
   justify-content: center;
 }
 
-#card-deck button{
-  background: rgba(125, 234, 245, 0.5);
+#card-deck button {
+  background: var(--shade2);
+  opacity: 0.8;
   color: var(--text);
   border-radius: 20px;
   text-align: center;
   transition: .3s;
   border-style: none;
-  margin-left: 15px;
+  margin-left:15px;
   margin-bottom: 20px;
   height: 40px;
   float: right;
@@ -62,6 +64,7 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(299px, 1fr));
   grid-gap: 1.5rem;
   list-style-type: none;
+  background-color:
 }
 
 #card-deck>ul>li:hover {
@@ -70,9 +73,12 @@ section {
 }
 
 #card-deck>ul>li {
-  border: 1.5px solid var(--shade2);
-  background: var(--shade1);
-  border-radius: 15px;
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20.0px );
+-webkit-backdrop-filter: blur( 20.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 #card-deck>ul>li>figure {
@@ -160,10 +166,11 @@ section {
   }
 
   body.light-theme {
-    --shade1: #F9F6F7;
-    --shade2: #E3F6F5;
-    --shade3: #BAE8E8;
-    --shade4: #272343;
+
+      --shade1: #eddfef;
+      --shade2: #d5cfe1;
+      --shade3: #b7b6c1;
+      --shade4: #464655;
     --text: #000;
     --shade5: #6265669c;
   }

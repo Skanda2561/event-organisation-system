@@ -1,8 +1,9 @@
 body {
-  --shade1: #F9F6F7;
-  --shade2: #E3F6F5;
-  --shade3: #BAE8E8;
-  --shade4: #272343;
+
+    --shade1: #eddfef;
+    --shade2: #d5cfe1;
+    --shade3: #b7b6c1;
+    --shade4: #464655;
   --text: #000;
 }
 
@@ -157,10 +158,11 @@ body {
   }
 
   body.light-theme {
-    --shade1: #F9F6F7;
-    --shade2: #E3F6F5;
-    --shade3: #BAE8E8;
-    --shade4: #272343;
+
+      --shade1: #eddfef;
+      --shade2: #d5cfe1;
+      --shade3: #b7b6c1;
+      --shade4: #464655;
     --text: #000;
   }
 }
