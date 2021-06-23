@@ -99,7 +99,7 @@ function display_modal($row , $cut=0)
 				</div>
 				<div class="modal-footer">
 					<form class="" action="reg.php" method="post" style="display:<?php if($row['event_upcoming']==1) echo 'inline-block';else echo 'none'; ?>">
-					  <input type="hidden" name="event_id" value="<?php echo $eid;?>">
+					  <input type="hidden" name="event_id" value="<?php echo $row['event_id'];?>">
 					  <input type="hidden" name="status" value="<?php echo $row['event_upcoming'];?>">
 					  <input class="btn btn-secondary " type="submit" value="Register" id="regbtn" style="background: var(--shade2);opacity: 0.8;color: var(--text);border-radius: 20px;text-align: center;border-style: none;margin-left: 15px;margin-bottom: 20px;height: 40px; float: right;" >
 					</form>
@@ -122,6 +122,27 @@ function display_row($row)
 		</figure>
 		<p><?php echo $row['event_desc']; ?></p><br>
 		<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" style="position:absolute;right:0.3rem; bottom:0.1rem;"data-target="#<?php echo $row['event_id']; ?>">See more</button>
+	</li>
+
+	<?php
+
+}
+function display_row_host($row)
+{
+	?>
+	<li>
+		<figure>
+			<img src="<?php echo $row['event_img'];?>" alt="<?php echo $row['event_name']; ?>">
+			<figcaption>
+				<h3> <?php echo $row['event_name']; ?> </h3>
+			</figcaption>
+		</figure>
+		<p><?php echo $row['event_desc']; ?></p><br>
+		<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" style="position:absolute;right:0.3rem; bottom:0.1rem;"data-target="#<?php echo $row['event_id']; ?>">See more</button>
+		<form class="" action="modify.php" method="post" style="display:<?php if($row['event_upcoming']==1) echo 'inline-block';else echo 'none'; ?>">
+			<input type="hidden" name="ueid" value="<?php echo $row['event_id'];?>">
+			<input class="btn btn-secondary " type="submit" value="Modify" id="regbtn" style="background: var(--shade2);opacity: 0.8;color: var(--text);border-radius: 20px;text-align: center;border-style: none;margin-left: 15px;margin-bottom: 20px;height: 40px; float: right;" >
+		</form>
 	</li>
 
 	<?php
@@ -152,7 +173,7 @@ function add_head()
 }
   ?>
 <?php
-function footer()
+function footer($cut=0)
 {
 	?>
 	<div class="copy-rights">

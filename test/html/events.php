@@ -22,7 +22,7 @@ session_start();
 	<?php add_head(); ?>
 </head>
 
-<body>
+<body style="background-image:url(../images/cbg.png);background-repeat:no-repeat;background-attachment:fixed;background-size:cover;">
 
   <!-- Navbar -->
 
@@ -142,7 +142,7 @@ session_start();
       </ul>
 
       <!-- Tab panes -->
-      <div class="tab-content">
+      <div class="tab-content" ">
         <div id="upcoming" class="container tab-pane active"><br>
           <h4>Upcoming events</h4>
           <main class="wrapper">

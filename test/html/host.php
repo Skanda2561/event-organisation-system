@@ -69,7 +69,8 @@ session_start();
 	<?php add_head(); ?>
 </head>
 
-<body id="host">
+<body style="background-image:url(../images/cbg.png);background-repeat:no-repeat;background-attachment:fixed;background-size:cover;">
+
   <!-- Navbar -->
 
   <nav id="top" class="navbar navbar-expand-lg navbar-light ">
@@ -138,7 +139,7 @@ session_start();
 								if ($result->num_rows > 0) {
 									// output data of each row
 									while($row = $result->fetch_assoc()) {
-										display_row($row);
+										display_row_host($row);
 										display_modal($row);
 									}
 									} else {

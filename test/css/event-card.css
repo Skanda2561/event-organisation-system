@@ -1,18 +1,3 @@
-body {
-    --shade1: #eddfef;
-    --shade2: #d5cfe1;
-    --shade3: #b7b6c1;
-    --shade4: #464655;
-  --text: #000;
-}
-
-.dark-theme {
-  --shade1: #343A40;
-  --shade2: #282423;
-  --shade3: #211E1C;
-  --shade4: #191715;
-  --text: #f9f6f7;
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -40,7 +25,6 @@ section {
   margin-left:15px;
   margin-bottom: 20px;
   height: 40px;
-  float: right;
 }
 
 #card-deck button:hover {
@@ -61,24 +45,29 @@ section {
 
 #card-deck>ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(299px, 1fr));
-  grid-gap: 1.5rem;
-  list-style-type: none;
-  background-color:
+  grid-template-columns: repeat(auto-fill, minmax(299px, 1fr));
+  grid-gap: 1rem;
+  list-style-type:none;
 }
 
 #card-deck>ul>li:hover {
-  background: linear-gradient(45deg, var(--shade1), var(--shade3));
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter:blur(30px);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background-image: linear-gradient(155deg, rgba(50, 40, 240, 0.33), rgba(255, 255, 255, 0));
+  border-radius: 22px;
+  border-top: 3px solid rgba( 255, 255, 255, 0.31 );
+  border-left: 3px solid rgba( 255, 255, 255, 0.31 );
 }
 
 #card-deck>ul>li {
-background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 20.0px );
--webkit-backdrop-filter: blur( 20.0px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter:blur(25px);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  background-image: linear-gradient(155deg, rgba(255, 255, 255, 0.27), rgba(255, 255, 255, 0));
+  border-radius: 22px;
+  border-top: 3px solid rgba( 255, 255, 255, 0.39 );
+  border-left: 3px solid rgba( 255, 255, 255, 0.39 );
 }
 
 #card-deck>ul>li>figure {
@@ -151,31 +140,6 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     font-weight: 100;
   }
 }
-
-/*mediaquery for dark mode*/
-@media (prefers-color-scheme: dark) {
-
-  /* defaults to dark theme */
-  body {
-    --shade1: #343A40;
-    --shade2: #282423;
-    --shade3: #211E1C;
-    --shade4: #191715;
-    --text: #f9f6f7;
-    --shade5: #cfd4d6a9;
-  }
-
-  body.light-theme {
-
-      --shade1: #eddfef;
-      --shade2: #d5cfe1;
-      --shade3: #b7b6c1;
-      --shade4: #464655;
-    --text: #000;
-    --shade5: #6265669c;
-  }
-}
-
 .row {
   display: flex;
   align-items: center;

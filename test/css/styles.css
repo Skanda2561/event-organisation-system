@@ -1,8 +1,8 @@
 body {
-  --shade1: #eddfef;
-  --shade2: #d5cfe1;
-  --shade3: #b7b6c1;
-  --shade4: #464655;
+  --shade1: #FFFBDF;
+  --shade2: #C6FFC1;
+  --shade3: #34656D;
+  --shade4: #334443;
   --text: #000;
 }
 
@@ -12,6 +12,26 @@ body {
   --shade3: #211E1C;
   --shade4: #191715;
   --text: #f9f6f7;
+}
+/*mediaquery for dark mode*/
+@media (prefers-color-scheme: dark) {
+
+  /* defaults to dark theme */
+  body {
+    --shade1: #343A40;
+    --shade2: #282423;
+    --shade3: #211E1C;
+    --shade4: #191715;
+    --text: #f9f6f7;
+  }
+
+  body.light-theme {
+    --shade1: #FFFBDF;
+    --shade2: #C6FFC1;
+    --shade3: #34656D;
+    --shade4: #334443;
+    --text: #000;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -34,6 +54,7 @@ body {
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 16px;
+  background-color:var(--shade1) !important;
   color: var(--text) !important;
 }
 
@@ -136,26 +157,7 @@ body {
   text-decoration: none;
 }
 
-/*mediaquery for dark mode*/
-@media (prefers-color-scheme: dark) {
 
-  /* defaults to dark theme */
-  body {
-    --shade1: #343A40;
-    --shade2: #282423;
-    --shade3: #211E1C;
-    --shade4: #191715;
-    --text: #f9f6f7;
-  }
-
-  body.light-theme {
-    --shade1: #eddfef;
-    --shade2: #d5cfe1;
-    --shade3: #b7b6c1;
-    --shade4: #464655;
-    --text: #000;
-  }
-}
 
 .navbar-nav {
   animation: nav-load 500ms ease-in;

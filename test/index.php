@@ -12,9 +12,9 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event-plazA</title>
     <!-- CSS Stylesheets -->
+	<link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/event-card.css">
-  <link rel="stylesheet" href="css/index.css">
   <?php add_head(); ?>
 </head>
 
@@ -111,7 +111,7 @@ session_start();
       <h2 style="padding-bottom:30px;display:block;" >Trending & Main Upcoming Events</h2><br>
       <ul>
         <?php
-          $qry1="SELECt * FROM events WHERE event_id IN (SELECT event_id FROM participants GROUP BY event_id ORDER BY COUNT(*) ) AND event_upcoming=1 LIMIT 3;";
+          $qry1="SELECT * FROM events e NATURAL JOIN participants p GROUP BY p.event_id Having e.event_upcoming=1 ORDER BY COUNT(p.student_id) DESC  LIMIT 3";
           $result = $con->query($qry1);
           if ($result->num_rows > 0) {
             // output data of each row
@@ -124,15 +124,8 @@ session_start();
                     <h3> <?php echo $row['event_name']; ?> </h3>
                   </figcaption>
                 </figure>
-                <p><?php echo $row['event_desc']; ?></p>
-                <div class="quick-info">
-                  <ul>
-                    <li>Time: <?php echo $row['time']; ?> </li>
-                    <li>Date: <?php echo $row['date']; ?> </li>
-                    <li>Venue: <?php echo $row['event_venue']; ?> </li>
-                  </ul>
-                </div>
-								<button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
+                <p><?php echo $row['event_desc']; ?></p> <br>
+                <button class="btn btn-small btn-outline-dark " type="button" data-toggle="modal" data-target="#<?php echo $row['event_id']; ?>">See more</button>
               </li>
               <?php
 							display_modal($row,3);
@@ -196,7 +189,30 @@ session_start();
 	<?php helper(); ?>
   <!-- Footer -->
   <footer id="footer">
-    <?php footer(); ?>
+		<div class="copy-rights">
+			<div class="foot names">
+				This website was created by<br>
+				S K Balaji : 1BM19CS134 S Skanda : 1BM19CS137<br>
+				Sai Praveen : 1BM19CS138 Saquib : 1BM19CS144 <br>
+				for the project work of third semester.
+			</div>
+			<div class="foot desc">
+				The aim of the website is to help colleges,<br>
+				student clubs, NGO ... to put up their events <br>
+				or activites online. Also, to help students <br>
+				participate in these.
+			</div>
+		</div>
+		<div class="container-fluid abtus">
+			<i class="fab fa-facebook-f fa-lg" style="color: #00acee ;"></i>
+			<i class="fab fa-twitter fa-lg" style="color: #0764b9 ;"></i>
+			<i class="fab fa-instagram fa-lg" style="color:#833AB4 ;"></i>
+			<i class="fas fa-envelope fa-lg " style="color:#e74646 ;"></i>
+			<br>
+			<button type="button" class="btn btn-outline-secondary  footbtn">
+				<a class="know-more" href="html/aboutus.php">Know more <i class="fa fa-chevron-right"></i></a>
+			</button>
+		</div>
   </footer>
 
   <script src="javascript/theme.js"></script>

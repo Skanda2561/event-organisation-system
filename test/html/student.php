@@ -20,7 +20,7 @@ session_start();
 	<?php add_head(); ?>
 </head>
 
-<body id="student">
+<body style="background-image:url(../images/cbg.png);background-repeat:no-repeat;background-attachment:fixed;background-size:cover;">
   <!-- Navbar -->
 
   <nav id="top" class="navbar navbar-expand-lg navbar-light ">

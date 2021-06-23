@@ -26,10 +26,6 @@
         <p></p>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="events.php">All Events</a>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" href="#footer">About Us</a>
           </li>
         </ul>
@@ -45,27 +41,54 @@ session_start();
     if (isset($user_data['host_id'])) {
       $type="host";
       echo "<script>alert('only students can register to events')</script>";
-    }elseif ($upcoming==0) {
-      echo "<script>alert('Event is over cannot register now')</script>";
-    }elseif (isset($user_data['student_id'])) {
-      $type="student";
-      $sid=$user_data['student_id'];
-      $qry2="select * from participants where event_id = '$eid' and student_id= '$sid' ";
-      $qry3="insert into participants(event_id, student_id) values ('$eid','$sid')";
-      $res1 = $con->query($qry2);
-      if ($res1->num_rows > 0) {
-        echo "<script>alert('already registered to event')</script>";
-      }else {
-      mysqli_query($con, $qry3);
-      $res2 = $con->query($qry2);
-      if ($res2->num_rows > 0) {
-        echo "<script>alert('registered to event successfully')</script>";
-      }else {
+    }elseif ($upcoming==1) {
+      if (isset($user_data['student_id'])) {
+
+	      $type="student";
+	      $sid=$user_data['student_id'];
+	      $qry2="select * from participants where event_id = '$eid' and student_id= '$sid' ";
+	      $qry3="insert into participants(event_id, student_id) values ('$eid','$sid')";
+	      $res1 = $con->query($qry2);
+	      if ($res1->num_rows > 0) {
+	        echo "<script>alert('already registered to event')</script>";
+	      }else {
+	      	mysqli_query($con, $qry3);
+	      	$res2 = $con->query($qry2);
+	      	if ($res2->num_rows > 0) {
+	        	echo "<script>alert('registered to event successfully')</script>";
+	      	}
+				}
+
+			}
+		}elseif ($upcoming==0) {
+	      echo "<script>alert('Event is over cannot register now')</script>";
+	    }else {
         echo "<script>alert('registeration to event failed')</script>";
       }
-    }
-    }
  ?>
+ <style >
+ 	.btns{
+ 		display: flex;
+		height: 60vh;
+		justify-content: center;
+		align-items: center;
+
+ 	}
+	button{
+		background: var(--shade2);
+		opacity: 0.8;
+		padding: 15px;
+		margin: 15px;
+		color: var(--text);
+		border-radius: 25px;
+		text-align: center;
+		border-style: none;margin-left: 15px;margin-bottom: 20px;
+		height: 50px;
+	}
+	button:hover{
+		background: var(--shade4);
+	}
+ </style>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
    <head>
@@ -73,20 +96,22 @@ session_start();
      <title></title>
    </head>
    <body>
-     <button type="button" class="btn btn-outline-secondary" name="button">
-     	<a href="events.php">Go to events page</a><br>
-     </button>
-		 <button type="button" class="btn btn-outline-secondary" name="button">
-			 <a href="<?php
-          if (isset($user_data['host_id'])) {
-              $type="host";}
-          elseif (isset($user_data['student_id'])) {
-              $type="student";}
-          echo $type;
-        ?>.php">
-         Go to dashboard
-       </a>
-		 </button>
+		 <div class="btns">
+			 <button type="button"  name="button">
+       	<a href="events.php">Go to events page</a><br>
+       </button>
+  		 <button type="button"  name="button">
+  			 <a href="<?php
+            if (isset($user_data['host_id'])) {
+                $type="host";}
+            elseif (isset($user_data['student_id'])) {
+                $type="student";}
+            echo $type;
+          ?>.php">
+           Go to dashboard
+         </a>
+  		 </button>
+		 </div>
      <br>
      <?php helper(); ?>
       <!-- Footer -->
