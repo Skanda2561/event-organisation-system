@@ -1,3 +1,39 @@
+body {
+  --shade1: #FFFBDF;
+  --shade2: #C6FFC1;
+  --shade3: #34656D;
+  --shade4: #334443;
+  --text: #000;
+}
+
+.dark-theme {
+  --shade1: #343A40;
+  --shade2: #282423;
+  --shade3: #211E1C;
+  --shade4: #191715;
+  --text: #f9f6f7;
+}
+/*mediaquery for dark mode*/
+@media (prefers-color-scheme: dark) {
+
+  /* defaults to dark theme */
+  body {
+    --shade1: #343A40;
+    --shade2: #282423;
+    --shade3: #211E1C;
+    --shade4: #191715;
+    --text: #f9f6f7;
+  }
+
+  body.light-theme {
+    --shade1: #FFFBDF;
+    --shade2: #C6FFC1;
+    --shade3: #34656D;
+    --shade4: #334443;
+    --text: #000;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

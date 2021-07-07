@@ -100,13 +100,13 @@ session_start();
   </section>
 
   <div class="newsletter ">
-    <form class="" action="aboutus.php" method="post">
+    <form class="" onsubmit="thanks();"  method="post">
       <h2 style="color:#000;">Events at your fingertips!!!</h2><br>
       <p style="color:#000;">Sign up to our monthly newsletter and never miss out from an event. Also get the event passes and goodies at a discounted rate !!</p>
       <br>
       <label for="mail" style="color:#000;">E-mail</label><br>
       <input required type="email" name="mail_id" id="mail" ><br>
-      <input type="submit" name="submit" value="signup"  style="color:#000;"><br>
+      <input type="submit" name="submit" value="signup" style="color:#000;"><br>
     </form>
   </div>
 

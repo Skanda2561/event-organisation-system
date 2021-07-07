@@ -92,7 +92,7 @@ session_start();
 										display_modal($row);
 									}
 									} else {
-									echo "Oops!!! We Don't Have Any Upcoming Events";
+									echo "C'mon, go and register to an event , don't stay empty.....  ";
 									}
 							}
 							?>

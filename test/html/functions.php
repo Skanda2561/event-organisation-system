@@ -101,7 +101,7 @@ function display_modal($row , $cut=0)
 					<form class="" action="reg.php" method="post" style="display:<?php if($row['event_upcoming']==1) echo 'inline-block';else echo 'none'; ?>">
 					  <input type="hidden" name="event_id" value="<?php echo $row['event_id'];?>">
 					  <input type="hidden" name="status" value="<?php echo $row['event_upcoming'];?>">
-					  <input class="btn btn-secondary " type="submit" value="Register" id="regbtn" style="background: var(--shade2);opacity: 0.8;color: var(--text);border-radius: 20px;text-align: center;border-style: none;margin-left: 15px;margin-bottom: 20px;height: 40px; float: right;" >
+					  <input class="btn btn-secondary " type="submit" onclick="return confirm('Are you sure to register to the event?')" value="Register" id="regbtn" style="background: var(--shade2);opacity: 0.8;color: var(--text);border-radius: 20px;text-align: center;border-style: none;margin-left: 15px;margin-bottom: 20px;height: 40px; float: right;" >
 					</form>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
@@ -148,7 +148,9 @@ function display_row_host($row)
 	<?php
 
 }
- ?>
+
+	?>
+
  <?php
 function add_head()
 {

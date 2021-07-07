@@ -49,7 +49,7 @@ session_start();
 					die;
 			}
 			else {
-				echo "enter valid data";
+				echo "<script>alert('enter valid data');</script>";
 			}
 		}
 
@@ -143,7 +143,7 @@ session_start();
 										display_modal($row);
 									}
 									} else {
-									echo "Oops!!! You Don't Have Any Upcoming Events";
+									echo "You Don't Have Any Upcoming Events!!";
 									}
 							}
 							?>
@@ -171,7 +171,7 @@ session_start();
 										display_modal($row);
 									}
 									} else {
-									echo "Oops!!! We Don't Have Any Upcoming Events";
+									echo "You haven't hosted any Events";
 									}
 							}
 							?>
